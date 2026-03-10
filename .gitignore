@@ -2,3 +2,6 @@
 **/.pbi/cache.abf
 *.pbix
 .DS_Store
+status.json
+history.json
+change-summary.txt
