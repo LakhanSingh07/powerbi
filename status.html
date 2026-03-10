@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PBIP Change Monitor</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f7f5;
+      --fg: #1b1f23;
+      --muted: #5a6470;
+      --card: #ffffff;
+      --border: #d9dee5;
+      --accent: #2f6f5e;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: "Segoe UI", system-ui, -apple-system, sans-serif;
+    }
+    body {
+      margin: 0;
+      padding: 24px;
+      font-family: var(--sans);
+      background: linear-gradient(135deg, #f7f7f5 0%, #eef1f0 100%);
+      color: var(--fg);
+    }
+    .wrap {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 24px;
+      margin: 0 0 6px 0;
+    }
+    .sub {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    }
+    .label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .value {
+      font-size: 16px;
+      font-weight: 600;
+    }
+    pre {
+      background: #0f172a;
+      color: #e2e8f0;
+      padding: 14px;
+      border-radius: 10px;
+      overflow: auto;
+      font-family: var(--mono);
+      font-size: 12px;
+      line-height: 1.4;
+    }
+    .pill {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .ok { background: #e7f6ef; color: #1f5b47; }
+    .pending { background: #fff2d6; color: #7a4b00; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>PBIP Change Monitor</h1>
+    <div class="sub">Auto-updates every 5 seconds. Data comes from status.json. View <a href="history.html">commit history</a>.</div>
+
+    <div class="grid">
+      <div class="card">
+        <div class="label">Status</div>
+        <div class="value" id="pending">Loading...</div>
+      </div>
+      <div class="card">
+        <div class="label">Last Change</div>
+        <div class="value" id="lastChange">Loading...</div>
+      </div>
+      <div class="card">
+        <div class="label">Last Commit</div>
+        <div class="value" id="lastCommit">Loading...</div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-bottom:16px;">
+      <div class="label">Git Status</div>
+      <pre id="status">Loading...</pre>
+    </div>
+
+    <div class="card">
+      <div class="label">Diff Stat</div>
+      <pre id="diffStat">Loading...</pre>
+    </div>
+  </div>
+
+  <script>
+    async function refresh() {
+      try {
+        const res = await fetch('status.json?ts=' + Date.now());
+        const data = await res.json();
+
+        const pending = document.getElementById('pending');
+        const isPending = !!data.pending;
+        pending.innerHTML = isPending ? '<span class="pill pending">Pending changes</span>' : '<span class="pill ok">Clean</span>';
+
+        document.getElementById('lastChange').textContent = data.lastChange || 'n/a';
+        document.getElementById('lastCommit').textContent = data.lastCommit || 'n/a';
+        document.getElementById('status').textContent = (data.status && data.status.length) ? data.status.join('\n') : 'Clean';
+        document.getElementById('diffStat').textContent = data.diffStat || 'No diff';
+      } catch (e) {
+        document.getElementById('pending').textContent = 'Error loading status.json';
+      }
+    }
+
+    refresh();
+    setInterval(refresh, 5000);
+  </script>
+</body>
+</html>

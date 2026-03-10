@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PBIP History</title>
+  <style>
+    :root {
+      --bg: #f7f7f5;
+      --fg: #1b1f23;
+      --muted: #5a6470;
+      --card: #ffffff;
+      --border: #d9dee5;
+      --accent: #2f6f5e;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: "Segoe UI", system-ui, -apple-system, sans-serif;
+    }
+    body {
+      margin: 0;
+      padding: 24px;
+      font-family: var(--sans);
+      background: linear-gradient(135deg, #f7f7f5 0%, #eef1f0 100%);
+      color: var(--fg);
+    }
+    .wrap { max-width: 1100px; margin: 0 auto; }
+    h1 { font-size: 24px; margin: 0 0 10px 0; }
+    .sub { color: var(--muted); margin-bottom: 16px; }
+    .toolbar { display: flex; gap: 12px; align-items: center; margin-bottom: 16px; }
+    input[type="search"] {
+      flex: 1;
+      padding: 8px 10px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 14px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    }
+    .meta { display: flex; flex-wrap: wrap; gap: 8px 16px; color: var(--muted); font-size: 12px; }
+    .msg { font-weight: 600; margin-bottom: 6px; }
+    .hash { font-family: var(--mono); font-size: 12px; }
+    .files { margin-top: 10px; font-family: var(--mono); font-size: 12px; white-space: pre; }
+    .pill { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 12px; font-weight: 600; background: #e7f6ef; color: #1f5b47; }
+    .muted { color: var(--muted); }
+    a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>PBIP Commit History</h1>
+    <div class="sub">Auto-updates from history.json. Return to <a href="status.html">status dashboard</a>.</div>
+
+    <div class="toolbar">
+      <input id="q" type="search" placeholder="Filter by message, file, or author" />
+      <span id="count" class="muted">Loading...</span>
+    </div>
+
+    <div id="list"></div>
+  </div>
+
+  <script>
+    let commits = [];
+
+    function render(list) {
+      const root = document.getElementById('list');
+      root.innerHTML = '';
+      document.getElementById('count').textContent = list.length + ' commits';
+
+      list.forEach(c => {
+        const card = document.createElement('div');
+        card.className = 'card';
+
+        const msg = document.createElement('div');
+        msg.className = 'msg';
+        msg.textContent = c.message;
+
+        const meta = document.createElement('div');
+        meta.className = 'meta';
+        meta.innerHTML = `
+          <span class="hash">${c.shortHash}</span>
+          <span>${c.author}</span>
+          <span>${c.date}</span>
+          <span class="pill">${c.stats.files} files</span>
+          <span>${c.stats.insertions} ins</span>
+          <span>${c.stats.deletions} del</span>
+        `;
+
+        const files = document.createElement('div');
+        files.className = 'files';
+        const fileLines = (c.files || []).map(f => {
+          const ins = (f.insertions === null) ? '-' : f.insertions;
+          const del = (f.deletions === null) ? '-' : f.deletions;
+          const status = f.status || ' '; 
+          return `${status}\t${ins}\t${del}\t${f.path}`;
+        });
+        files.textContent = fileLines.join('\n');
+
+        card.appendChild(msg);
+        card.appendChild(meta);
+        card.appendChild(files);
+        root.appendChild(card);
+      });
+    }
+
+    function filter() {
+      const q = document.getElementById('q').value.toLowerCase();
+      if (!q) { render(commits); return; }
+      const filtered = commits.filter(c => {
+        if ((c.message || '').toLowerCase().includes(q)) return true;
+        if ((c.author || '').toLowerCase().includes(q)) return true;
+        return (c.files || []).some(f => (f.path || '').toLowerCase().includes(q));
+      });
+      render(filtered);
+    }
+
+    async function refresh() {
+      try {
+        const res = await fetch('history.json?ts=' + Date.now());
+        const data = await res.json();
+        commits = data.commits || [];
+        filter();
+      } catch (e) {
+        document.getElementById('count').textContent = 'Error loading history.json';
+      }
+    }
+
+    document.getElementById('q').addEventListener('input', filter);
+    refresh();
+    setInterval(refresh, 15000);
+  </script>
+</body>
+</html>
