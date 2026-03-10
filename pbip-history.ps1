@@ -25,14 +25,14 @@ function Finalize-Commit {
   if (-not $c.statusByPath) { $c.statusByPath = @{} }
 
   foreach ($f in $c.files) {
-    if (-not $f.status -and $c.statusByPath.ContainsKey($f.path)) {
+    if ($null -ne $f.path -and (-not $f.status) -and $c.statusByPath.ContainsKey($f.path)) {
       $f.status = $c.statusByPath[$f.path]
     }
   }
 
   if ($c.files.Count -eq 0 -and $c.statusByPath.Count -gt 0) {
     foreach ($k in $c.statusByPath.Keys) {
-      $c.files += [ordered]@{
+      $c.files += [pscustomobject]@{
         path = $k
         insertions = $null
         deletions = $null
@@ -41,7 +41,11 @@ function Finalize-Commit {
     }
   }
 
-  $c.filesChanged = ($c.files | Select-Object -ExpandProperty path -Unique).Count
+  $paths = @()
+  foreach ($f in $c.files) {
+    if ($null -ne $f.path) { $paths += $f.path }
+  }
+  $c.filesChanged = ($paths | Select-Object -Unique).Count
   $c.stats = [ordered]@{
     files = $c.filesChanged
     insertions = $c.insertions
@@ -81,7 +85,7 @@ foreach ($line in $lines) {
     $path = $parts[2]
     $curr.insertions += $ins
     $curr.deletions += $del
-    $curr.files += [ordered]@{
+    $curr.files += [pscustomobject]@{
       path = $path
       insertions = $ins
       deletions = $del
@@ -93,7 +97,7 @@ foreach ($line in $lines) {
   if ($line -match '^-\s+-\s+') {
     $parts = $line -split "\s+", 3
     $path = $parts[2]
-    $curr.files += [ordered]@{
+    $curr.files += [pscustomobject]@{
       path = $path
       insertions = $null
       deletions = $null
