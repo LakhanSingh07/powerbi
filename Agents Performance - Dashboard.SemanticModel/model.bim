@@ -1,0 +1,3996 @@
+{
+  "compatibilityLevel": 1550,
+  "model": {
+    "annotations": [
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "PBIDesktopVersion",
+        "value": "2.135.7627.0 (24.08)"
+      },
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"FactSales\",\"# Measures\",\"DimEmployee\",\"DimStore\",\"Clustered Employees\",\"DimChannel\"]"
+      },
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"DaxQueryView_Desktop\",\"DevMode\"]"
+      }
+    ],
+    "culture": "en-US",
+    "cultures": [
+      {
+        "name": "en-US",
+        "linguisticMetadata": {
+          "content": {
+            "Language": "en-US",
+            "Version": "1.0.0"
+          },
+          "contentType": "json"
+        }
+      }
+    ],
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "extendedProperties": [
+      {
+        "name": "SQLBI_BRAVO_ManageDatesConfiguration",
+        "type": "json",
+        "value": {
+          "name": "Config-01",
+          "autoNaming": 1,
+          "autoScan": 127,
+          "dateAvailable": true,
+          "dateEnabled": true,
+          "dateReferenceTableName": "DateAutoTemplate",
+          "dateReferenceTableValidation": 1,
+          "dateTableName": "Date",
+          "dateTableValidation": 1,
+          "defaults": {
+            "firstDayOfWeek": 0
+          },
+          "description": "Standard gregorian calendar",
+          "exceptTablesColumns": [],
+          "holidaysAvailable": true,
+          "holidaysDefinitionTableName": "HolidaysDefinition",
+          "holidaysDefinitionTableValidation": 0,
+          "holidaysEnabled": false,
+          "holidaysTableName": "Holidays",
+          "holidaysTableValidation": 0,
+          "isCurrent": false,
+          "isCustom": false,
+          "isoCountry": "US",
+          "onlyTablesColumns": [],
+          "targetMeasures": [],
+          "templateUri": "file:///C:/Users/Sajjad/AppData/Local/Bravo/.temp/ManageDates/Templates/Config-01.template.json",
+          "timeIntelligenceAvailable": true,
+          "timeIntelligenceEnabled": true
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "name": "0ae86669-184e-470e-8c5e-6c5d5d6d2b81",
+        "fromColumn": "StoreKey",
+        "fromTable": "FactSales",
+        "toColumn": "StoreKey",
+        "toTable": "DimStore"
+      },
+      {
+        "name": "8de3fe2c-ab7c-4a6b-9e68-bf5fa6e8a4ac",
+        "fromColumn": "EmployeeKey",
+        "fromTable": "DimStore",
+        "toColumn": "EmployeeKey",
+        "toTable": "DimEmployee"
+      },
+      {
+        "name": "a9ffc24f-47be-415c-b5f6-fea77b437b4c",
+        "fromColumn": "DateKey",
+        "fromTable": "FactSales",
+        "toColumn": "Date",
+        "toTable": "Date"
+      },
+      {
+        "name": "5e995b84-02c9-4bd3-8eb8-33c6af35a474",
+        "fromColumn": "channelKey",
+        "fromTable": "FactSales",
+        "toColumn": "ChannelKey",
+        "toTable": "DimChannel"
+      }
+    ],
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "FactSales",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "SalesKey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "84a0c4c1-a9b6-4f2a-b1ed-916c056f7183",
+            "sourceColumn": "SalesKey",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DateKey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Short Date",
+            "lineageTag": "beb71168-182c-49de-a6a0-62edf6367ae4",
+            "sourceColumn": "DateKey",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "channelKey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "8d50fe3e-e2f0-4056-8ddf-f696c664a523",
+            "sourceColumn": "channelKey",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "StoreKey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "b0021255-f696-4f5e-96f0-ab40b15c65a4",
+            "sourceColumn": "StoreKey",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ProductKey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "4308c1b6-fef8-462c-b8e4-c72616def61e",
+            "sourceColumn": "ProductKey",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "UnitCost",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "b0144b1d-7a31-4350-a2c9-9b9a877f4b21",
+            "sourceColumn": "UnitCost",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "UnitPrice",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "c9376b4c-f90d-4b34-abd0-474eb09219d8",
+            "sourceColumn": "UnitPrice",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "SalesQuantity",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "2c73cb30-0547-4ff3-a2d8-2205f53e38aa",
+            "sourceColumn": "SalesQuantity",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ReturnQuantity",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "21c18bd0-12c1-4764-a75a-719126cd8a7e",
+            "sourceColumn": "ReturnQuantity",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ReturnAmount",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "d3ba1a1f-cac5-45aa-b743-985b5b87fc1c",
+            "sourceColumn": "ReturnAmount",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DiscountQuantity",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "38263186-b336-4c54-a331-c3f718c24442",
+            "sourceColumn": "DiscountQuantity",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DiscountAmount",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "4fa1ef7f-5dbd-42ac-95e8-b955af506e9d",
+            "sourceColumn": "DiscountAmount",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "TotalCost",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "d4df3ce7-26ce-4949-92e3-28dbb0e5fae1",
+            "sourceColumn": "TotalCost",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "SalesAmount",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "a408b400-720e-4a6e-935f-e07603063d51",
+            "sourceColumn": "SalesAmount",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "bbcd6d5b-dfe4-4cbe-9bba-4e5b1911df20",
+        "partitions": [
+          {
+            "name": "FactSales",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"F:\\Work\\# My-Freelance-World\\Dataset\\Cleaned Contoso Dataset\\FactSales.csv\"),[Delimiter=\",\", Columns=16, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"SalesKey\", Int64.Type}, {\"DateKey\", type date}, {\"channelKey\", Int64.Type}, {\"StoreKey\", Int64.Type}, {\"ProductKey\", Int64.Type}, {\"PromotionKey\", Int64.Type}, {\"CurrencyKey\", Int64.Type}, {\"UnitCost\", type number}, {\"UnitPrice\", type number}, {\"SalesQuantity\", Int64.Type}, {\"ReturnQuantity\", Int64.Type}, {\"ReturnAmount\", type number}, {\"DiscountQuantity\", Int64.Type}, {\"DiscountAmount\", type number}, {\"TotalCost\", type number}, {\"SalesAmount\", type number}}),",
+                "    #\"Filtered Rows\" = Table.SelectRows(#\"Changed Type\", each [SalesKey] < 200000),",
+                "    #\"Removed Columns\" = Table.RemoveColumns(#\"Filtered Rows\",{\"CurrencyKey\", \"PromotionKey\"})",
+                "in",
+                "    #\"Removed Columns\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "# Measures",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "lineageTag": "b6224613-9a70-4b57-b8b2-4cf4249bf2cf",
+        "measures": [
+          {
+            "name": "Total Sales",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "SUM( FactSales[SalesAmount] ) ",
+            "lineageTag": "0a76b18c-88d4-410a-8f0d-09883749d1aa"
+          },
+          {
+            "name": "YTD Total Sales",
+            "annotations": [
+              {
+                "name": "SQLBI_Template",
+                "value": "TimeIntelligence"
+              },
+              {
+                "name": "SQLBI_TimeIntelligence",
+                "value": "Standard"
+              },
+              {
+                "name": "SQLBI_CalendarType",
+                "value": "Calendar"
+              }
+            ],
+            "displayFolder": "Time intelligence\\To-date total\\Total Sales",
+            "expression": [
+              "",
+              "IF (",
+              "    [_ShowValueForDates],",
+              "    CALCULATE (",
+              "        [Total Sales],",
+              "        DATESYTD ( 'Date'[Date] )",
+              "    )",
+              ")"
+            ],
+            "lineageTag": "a6af7fae-e590-486c-a67f-f7782ebece20"
+          },
+          {
+            "name": "QTD Total Sales",
+            "annotations": [
+              {
+                "name": "SQLBI_Template",
+                "value": "TimeIntelligence"
+              },
+              {
+                "name": "SQLBI_TimeIntelligence",
+                "value": "Standard"
+              },
+              {
+                "name": "SQLBI_CalendarType",
+                "value": "Calendar"
+              }
+            ],
+            "displayFolder": "Time intelligence\\To-date total\\Total Sales",
+            "expression": [
+              "",
+              "IF (",
+              "    [_ShowValueForDates],",
+              "    CALCULATE (",
+              "        [Total Sales],",
+              "        DATESQTD ( 'Date'[Date] )",
+              "    )",
+              ")"
+            ],
+            "lineageTag": "66590c51-96e5-4b36-8a6c-a4ff1c385244"
+          },
+          {
+            "name": "MTD Total Sales",
+            "annotations": [
+              {
+                "name": "SQLBI_Template",
+                "value": "TimeIntelligence"
+              },
+              {
+                "name": "SQLBI_TimeIntelligence",
+                "value": "Standard"
+              },
+              {
+                "name": "SQLBI_CalendarType",
+                "value": "Calendar"
+              }
+            ],
+            "displayFolder": "Time intelligence\\To-date total\\Total Sales",
+            "expression": [
+              "",
+              "IF (",
+              "    [_ShowValueForDates],",
+              "    CALCULATE (",
+              "        [Total Sales],",
+              "        DATESMTD ( 'Date'[Date] )",
+              "    )",
+              ")"
+            ],
+            "lineageTag": "17d3a026-0ce0-416f-939c-84333c5bcc2d"
+          },
+          {
+            "name": "PY Total Sales",
+            "annotations": [
+              {
+                "name": "SQLBI_Template",
+                "value": "TimeIntelligence"
+              },
+              {
+                "name": "SQLBI_TimeIntelligence",
+                "value": "Standard"
+              },
+              {
+                "name": "SQLBI_CalendarType",
+                "value": "Calendar"
+              }
+            ],
+            "displayFolder": "Time intelligence\\Growth\\Total Sales",
+            "expression": [
+              "",
+              "IF (",
+              "    [_ShowValueForDates],",
+              "    CALCULATE (",
+              "        [Total Sales],",
+              "        CALCULATETABLE (",
+              "            DATEADD ( 'Date'[Date], -1, YEAR ),",
+              "            'Date'[DateWithTransactions] = TRUE",
+              "        )",
+              "    )",
+              ")"
+            ],
+            "lineageTag": "8f4ce316-2cd7-44fa-93a1-e9b18319b76c"
+          },
+          {
+            "name": "YOY Total Sales",
+            "annotations": [
+              {
+                "name": "SQLBI_Template",
+                "value": "TimeIntelligence"
+              },
+              {
+                "name": "SQLBI_TimeIntelligence",
+                "value": "Standard"
+              },
+              {
+                "name": "SQLBI_CalendarType",
+                "value": "Calendar"
+              }
+            ],
+            "displayFolder": "Time intelligence\\Growth\\Total Sales",
+            "expression": [
+              "",
+              "VAR __ValueCurrentPeriod = [Total Sales]",
+              "VAR __ValuePreviousPeriod = [PY Total Sales]",
+              "VAR __Result =",
+              "    IF (",
+              "        NOT ISBLANK ( __ValueCurrentPeriod ) && NOT ISBLANK ( __ValuePreviousPeriod ),",
+              "        __ValueCurrentPeriod - __ValuePreviousPeriod",
+              "    )",
+              "RETURN",
+              "    __Result"
+            ],
+            "lineageTag": "797f2833-2b0b-4e63-bb68-65357a92d3ee"
+          },
+          {
+            "name": "YOY % Total Sales",
+            "annotations": [
+              {
+                "name": "SQLBI_Template",
+                "value": "TimeIntelligence"
+              },
+              {
+                "name": "SQLBI_TimeIntelligence",
+                "value": "Standard"
+              },
+              {
+                "name": "SQLBI_CalendarType",
+                "value": "Calendar"
+              }
+            ],
+            "displayFolder": "Time intelligence\\Growth\\Total Sales",
+            "expression": [
+              "",
+              "DIVIDE ( ",
+              "    [YOY Total Sales],",
+              "    [PY Total Sales]",
+              ")"
+            ],
+            "formatString": "0.00%",
+            "lineageTag": "33bf10ba-e6c5-4f95-bc56-2eaec814e187"
+          },
+          {
+            "name": "PQ Total Sales",
+            "annotations": [
+              {
+                "name": "SQLBI_Template",
+                "value": "TimeIntelligence"
+              },
+              {
+                "name": "SQLBI_TimeIntelligence",
+                "value": "Standard"
+              },
+              {
+                "name": "SQLBI_CalendarType",
+                "value": "Calendar"
+              }
+            ],
+            "displayFolder": "Time intelligence\\Growth\\Total Sales",
+            "expression": [
+              "",
+              "IF (",
+              "    [_ShowValueForDates],",
+              "    CALCULATE (",
+              "        [Total Sales],",
+              "        CALCULATETABLE (",
+              "            DATEADD ( 'Date'[Date], -1, QUARTER ),",
+              "            'Date'[DateWithTransactions] = TRUE",
+              "        )",
+              "    )",
+              ")"
+            ],
+            "lineageTag": "7cce38f5-a574-4278-985f-8a6fda3c4099"
+          },
+          {
+            "name": "QOQ Total Sales",
+            "annotations": [
+              {
+                "name": "SQLBI_Template",
+                "value": "TimeIntelligence"
+              },
+              {
+                "name": "SQLBI_TimeIntelligence",
+                "value": "Standard"
+              },
+              {
+                "name": "SQLBI_CalendarType",
+                "value": "Calendar"
+              }
+            ],
+            "displayFolder": "Time intelligence\\Growth\\Total Sales",
+            "expression": [
+              "",
+              "VAR __ValueCurrentPeriod = [Total Sales]",
+              "VAR __ValuePreviousPeriod = [PQ Total Sales]",
+              "VAR __Result =",
+              "    IF (",
+              "        NOT ISBLANK ( __ValueCurrentPeriod ) && NOT ISBLANK ( __ValuePreviousPeriod ),",
+              "        __ValueCurrentPeriod - __ValuePreviousPeriod",
+              "    )",
+              "RETURN",
+              "    __Result"
+            ],
+            "lineageTag": "0f7f6600-9d54-45f3-aeeb-0250353aaeb1"
+          },
+          {
+            "name": "QOQ % Total Sales",
+            "annotations": [
+              {
+                "name": "SQLBI_Template",
+                "value": "TimeIntelligence"
+              },
+              {
+                "name": "SQLBI_TimeIntelligence",
+                "value": "Standard"
+              },
+              {
+                "name": "SQLBI_CalendarType",
+                "value": "Calendar"
+              }
+            ],
+            "displayFolder": "Time intelligence\\Growth\\Total Sales",
+            "expression": [
+              "",
+              "DIVIDE ( ",
+              "    [QOQ Total Sales],",
+              "    [PQ Total Sales]",
+              ")"
+            ],
+            "formatString": "0.00%",
+            "lineageTag": "a5096c25-9ec4-4ba3-bdfa-9ab7cf6f130e"
+          },
+          {
+            "name": "PM Total Sales",
+            "annotations": [
+              {
+                "name": "SQLBI_Template",
+                "value": "TimeIntelligence"
+              },
+              {
+                "name": "SQLBI_TimeIntelligence",
+                "value": "Standard"
+              },
+              {
+                "name": "SQLBI_CalendarType",
+                "value": "Calendar"
+              }
+            ],
+            "displayFolder": "Time intelligence\\Growth\\Total Sales",
+            "expression": [
+              "",
+              "IF (",
+              "    [_ShowValueForDates],",
+              "    CALCULATE (",
+              "        [Total Sales],",
+              "        CALCULATETABLE (",
+              "            DATEADD ( 'Date'[Date], -1, MONTH ),",
+              "            'Date'[DateWithTransactions] = TRUE",
+              "        )",
+              "    )",
+              ")"
+            ],
+            "lineageTag": "4c9c97dc-a407-4ca5-abad-5939fe3738b0"
+          },
+          {
+            "name": "MOM Total Sales",
+            "annotations": [
+              {
+                "name": "SQLBI_Template",
+                "value": "TimeIntelligence"
+              },
+              {
+                "name": "SQLBI_TimeIntelligence",
+                "value": "Standard"
+              },
+              {
+                "name": "SQLBI_CalendarType",
+                "value": "Calendar"
+              }
+            ],
+            "displayFolder": "Time intelligence\\Growth\\Total Sales",
+            "expression": [
+              "",
+              "VAR __ValueCurrentPeriod = [Total Sales]",
+              "VAR __ValuePreviousPeriod = [PM Total Sales]",
+              "VAR __Result =",
+              "    IF (",
+              "        NOT ISBLANK ( __ValueCurrentPeriod ) && NOT ISBLANK ( __ValuePreviousPeriod ),",
+              "        __ValueCurrentPeriod - __ValuePreviousPeriod",
+              "    )",
+              "RETURN",
+              "    __Result"
+            ],
+            "lineageTag": "b05fa115-7e12-4eca-b18f-3e7e7d0b293f"
+          },
+          {
+            "name": "MOM % Total Sales",
+            "annotations": [
+              {
+                "name": "SQLBI_Template",
+                "value": "TimeIntelligence"
+              },
+              {
+                "name": "SQLBI_TimeIntelligence",
+                "value": "Standard"
+              },
+              {
+                "name": "SQLBI_CalendarType",
+                "value": "Calendar"
+              }
+            ],
+            "displayFolder": "Time intelligence\\Growth\\Total Sales",
+            "expression": [
+              "",
+              "DIVIDE ( ",
+              "    [MOM Total Sales],",
+              "    [PM Total Sales]",
+              ")"
+            ],
+            "formatString": "0.00%",
+            "lineageTag": "bd8ce22c-8d4b-4a5d-bd5f-76b231f7498a"
+          },
+          {
+            "name": "PYTD Total Sales",
+            "annotations": [
+              {
+                "name": "SQLBI_Template",
+                "value": "TimeIntelligence"
+              },
+              {
+                "name": "SQLBI_TimeIntelligence",
+                "value": "Standard"
+              },
+              {
+                "name": "SQLBI_CalendarType",
+                "value": "Calendar"
+              }
+            ],
+            "displayFolder": "Time intelligence\\To-date growth\\Total Sales",
+            "expression": [
+              "",
+              "IF (",
+              "    [_ShowValueForDates],",
+              "    CALCULATE (",
+              "        [YTD Total Sales],",
+              "        CALCULATETABLE (",
+              "            DATEADD ( 'Date'[Date], -1, YEAR ),",
+              "            'Date'[DateWithTransactions] = TRUE",
+              "        )",
+              "    )",
+              ")"
+            ],
+            "lineageTag": "d32c605c-f268-44e6-b07c-bc821d488ed0"
+          },
+          {
+            "name": "YOYTD Total Sales",
+            "annotations": [
+              {
+                "name": "SQLBI_Template",
+                "value": "TimeIntelligence"
+              },
+              {
+                "name": "SQLBI_TimeIntelligence",
+                "value": "Standard"
+              },
+              {
+                "name": "SQLBI_CalendarType",
+                "value": "Calendar"
+              }
+            ],
+            "displayFolder": "Time intelligence\\To-date growth\\Total Sales",
+            "expression": [
+              "",
+              "VAR __ValueCurrentPeriod = [YTD Total Sales]",
+              "VAR __ValuePreviousPeriod = [PYTD Total Sales]",
+              "VAR __Result =",
+              "    IF (",
+              "        NOT ISBLANK ( __ValueCurrentPeriod ) && NOT ISBLANK ( __ValuePreviousPeriod ),",
+              "        __ValueCurrentPeriod - __ValuePreviousPeriod",
+              "    )",
+              "RETURN",
+              "    __Result"
+            ],
+            "lineageTag": "5e1befd0-9919-4311-bc7b-383475eb449b"
+          },
+          {
+            "name": "YOYTD % Total Sales",
+            "annotations": [
+              {
+                "name": "SQLBI_Template",
+                "value": "TimeIntelligence"
+              },
+              {
+                "name": "SQLBI_TimeIntelligence",
+                "value": "Standard"
+              },
+              {
+                "name": "SQLBI_CalendarType",
+                "value": "Calendar"
+              }
+            ],
+            "displayFolder": "Time intelligence\\To-date growth\\Total Sales",
+            "expression": [
+              "",
+              "DIVIDE ( ",
+              "    [YOYTD Total Sales],",
+              "    [PYTD Total Sales]",
+              ")"
+            ],
+            "formatString": "0.00%",
+            "lineageTag": "2abc01e0-f30f-4256-bd58-70ac87cc3716"
+          },
+          {
+            "name": "PQTD Total Sales",
+            "annotations": [
+              {
+                "name": "SQLBI_Template",
+                "value": "TimeIntelligence"
+              },
+              {
+                "name": "SQLBI_TimeIntelligence",
+                "value": "Standard"
+              },
+              {
+                "name": "SQLBI_CalendarType",
+                "value": "Calendar"
+              }
+            ],
+            "displayFolder": "Time intelligence\\To-date growth\\Total Sales",
+            "expression": [
+              "",
+              "IF (",
+              "    [_ShowValueForDates],",
+              "    CALCULATE (",
+              "        [QTD Total Sales],",
+              "        CALCULATETABLE (",
+              "            DATEADD ( 'Date'[Date], -1, QUARTER ),",
+              "            'Date'[DateWithTransactions] = TRUE",
+              "        )",
+              "    )",
+              ")"
+            ],
+            "lineageTag": "44dbf616-3e5f-4b1c-880a-65d16d72bce5"
+          },
+          {
+            "name": "QOQTD Total Sales",
+            "annotations": [
+              {
+                "name": "SQLBI_Template",
+                "value": "TimeIntelligence"
+              },
+              {
+                "name": "SQLBI_TimeIntelligence",
+                "value": "Standard"
+              },
+              {
+                "name": "SQLBI_CalendarType",
+                "value": "Calendar"
+              }
+            ],
+            "displayFolder": "Time intelligence\\To-date growth\\Total Sales",
+            "expression": [
+              "",
+              "VAR __ValueCurrentPeriod = [QTD Total Sales]",
+              "VAR __ValuePreviousPeriod = [PQTD Total Sales]",
+              "VAR __Result =",
+              "    IF (",
+              "        NOT ISBLANK ( __ValueCurrentPeriod ) && NOT ISBLANK ( __ValuePreviousPeriod ),",
+              "        __ValueCurrentPeriod - __ValuePreviousPeriod",
+              "    )",
+              "RETURN",
+              "    __Result"
+            ],
+            "lineageTag": "ddafc780-05b1-47ed-bb2f-44b8fd8cad6c"
+          },
+          {
+            "name": "QOQTD % Total Sales",
+            "annotations": [
+              {
+                "name": "SQLBI_Template",
+                "value": "TimeIntelligence"
+              },
+              {
+                "name": "SQLBI_TimeIntelligence",
+                "value": "Standard"
+              },
+              {
+                "name": "SQLBI_CalendarType",
+                "value": "Calendar"
+              }
+            ],
+            "displayFolder": "Time intelligence\\To-date growth\\Total Sales",
+            "expression": [
+              "",
+              "DIVIDE ( ",
+              "    [QOQTD Total Sales],",
+              "    [PQTD Total Sales]",
+              ")"
+            ],
+            "formatString": "0.00%",
+            "lineageTag": "a360974f-27e3-44b5-8619-83c3e4b78fe6"
+          },
+          {
+            "name": "PMTD Total Sales",
+            "annotations": [
+              {
+                "name": "SQLBI_Template",
+                "value": "TimeIntelligence"
+              },
+              {
+                "name": "SQLBI_TimeIntelligence",
+                "value": "Standard"
+              },
+              {
+                "name": "SQLBI_CalendarType",
+                "value": "Calendar"
+              }
+            ],
+            "displayFolder": "Time intelligence\\To-date growth\\Total Sales",
+            "expression": [
+              "",
+              "IF (",
+              "    [_ShowValueForDates],",
+              "    CALCULATE (",
+              "        [MTD Total Sales],",
+              "        CALCULATETABLE (",
+              "            DATEADD ( 'Date'[Date], -1, MONTH ),",
+              "            'Date'[DateWithTransactions] = TRUE",
+              "        )",
+              "    )",
+              ")"
+            ],
+            "lineageTag": "d4b5e190-26fb-4780-aaa8-227544ec6d84"
+          },
+          {
+            "name": "MOMTD Total Sales",
+            "annotations": [
+              {
+                "name": "SQLBI_Template",
+                "value": "TimeIntelligence"
+              },
+              {
+                "name": "SQLBI_TimeIntelligence",
+                "value": "Standard"
+              },
+              {
+                "name": "SQLBI_CalendarType",
+                "value": "Calendar"
+              }
+            ],
+            "displayFolder": "Time intelligence\\To-date growth\\Total Sales",
+            "expression": [
+              "",
+              "VAR __ValueCurrentPeriod = [MTD Total Sales]",
+              "VAR __ValuePreviousPeriod = [PMTD Total Sales]",
+              "VAR __Result =",
+              "    IF (",
+              "        NOT ISBLANK ( __ValueCurrentPeriod ) && NOT ISBLANK ( __ValuePreviousPeriod ),",
+              "        __ValueCurrentPeriod - __ValuePreviousPeriod",
+              "    )",
+              "RETURN",
+              "    __Result"
+            ],
+            "lineageTag": "889fe9b1-282d-4cbc-a554-9375de7bd457"
+          },
+          {
+            "name": "MOMTD % Total Sales",
+            "annotations": [
+              {
+                "name": "SQLBI_Template",
+                "value": "TimeIntelligence"
+              },
+              {
+                "name": "SQLBI_TimeIntelligence",
+                "value": "Standard"
+              },
+              {
+                "name": "SQLBI_CalendarType",
+                "value": "Calendar"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isCustom\":true}"
+              }
+            ],
+            "displayFolder": "Time intelligence\\To-date growth\\Total Sales",
+            "expression": [
+              "",
+              "DIVIDE ( ",
+              "    [MOMTD Total Sales],",
+              "    [PMTD Total Sales]",
+              ")"
+            ],
+            "formatString": "0.0%",
+            "lineageTag": "871905d9-dac6-48a6-8745-b0ae45c5dff8"
+          },
+          {
+            "name": "PYC Total Sales",
+            "annotations": [
+              {
+                "name": "SQLBI_Template",
+                "value": "TimeIntelligence"
+              },
+              {
+                "name": "SQLBI_TimeIntelligence",
+                "value": "Standard"
+              },
+              {
+                "name": "SQLBI_CalendarType",
+                "value": "Calendar"
+              }
+            ],
+            "displayFolder": "Time intelligence\\Growth over full period\\Total Sales",
+            "expression": [
+              "",
+              "IF (",
+              "    [_ShowValueForDates],",
+              "    CALCULATE (",
+              "        [Total Sales],",
+              "        PARALLELPERIOD ( 'Date'[Date], -1, YEAR )",
+              "    )",
+              ")"
+            ],
+            "lineageTag": "e74e8180-619c-45e2-94c4-416a46703aed"
+          },
+          {
+            "name": "YTDOPY Total Sales",
+            "annotations": [
+              {
+                "name": "SQLBI_Template",
+                "value": "TimeIntelligence"
+              },
+              {
+                "name": "SQLBI_TimeIntelligence",
+                "value": "Standard"
+              },
+              {
+                "name": "SQLBI_CalendarType",
+                "value": "Calendar"
+              }
+            ],
+            "displayFolder": "Time intelligence\\Growth over full period\\Total Sales",
+            "expression": [
+              "",
+              "VAR __ValueCurrentPeriod = [YTD Total Sales]",
+              "VAR __ValuePreviousPeriod = [PYC Total Sales]",
+              "VAR __Result =",
+              "    IF (",
+              "        NOT ISBLANK ( __ValueCurrentPeriod ) && NOT ISBLANK ( __ValuePreviousPeriod ),",
+              "        __ValueCurrentPeriod - __ValuePreviousPeriod",
+              "    )",
+              "RETURN",
+              "    __Result"
+            ],
+            "lineageTag": "66269ced-970f-4d05-9f3a-8ed988a4940f"
+          },
+          {
+            "name": "YDTOPY % Total Sales",
+            "annotations": [
+              {
+                "name": "SQLBI_Template",
+                "value": "TimeIntelligence"
+              },
+              {
+                "name": "SQLBI_TimeIntelligence",
+                "value": "Standard"
+              },
+              {
+                "name": "SQLBI_CalendarType",
+                "value": "Calendar"
+              }
+            ],
+            "displayFolder": "Time intelligence\\Growth over full period\\Total Sales",
+            "expression": [
+              "",
+              "DIVIDE ( ",
+              "    [YTDOPY Total Sales],",
+              "    [PYC Total Sales]",
+              ")"
+            ],
+            "formatString": "0.00%",
+            "lineageTag": "6d50c3b7-c230-4522-9746-039ccec3236a"
+          },
+          {
+            "name": "PQC Total Sales",
+            "annotations": [
+              {
+                "name": "SQLBI_Template",
+                "value": "TimeIntelligence"
+              },
+              {
+                "name": "SQLBI_TimeIntelligence",
+                "value": "Standard"
+              },
+              {
+                "name": "SQLBI_CalendarType",
+                "value": "Calendar"
+              }
+            ],
+            "displayFolder": "Time intelligence\\Growth over full period\\Total Sales",
+            "expression": [
+              "",
+              "IF (",
+              "    [_ShowValueForDates],",
+              "    CALCULATE (",
+              "        [Total Sales],",
+              "        PARALLELPERIOD ( 'Date'[Date], -1, QUARTER )",
+              "    )",
+              ")"
+            ],
+            "lineageTag": "a94c14f0-fc4b-4b92-a1c8-0a03815a7358"
+          },
+          {
+            "name": "QTDOPQ Total Sales",
+            "annotations": [
+              {
+                "name": "SQLBI_Template",
+                "value": "TimeIntelligence"
+              },
+              {
+                "name": "SQLBI_TimeIntelligence",
+                "value": "Standard"
+              },
+              {
+                "name": "SQLBI_CalendarType",
+                "value": "Calendar"
+              }
+            ],
+            "displayFolder": "Time intelligence\\Growth over full period\\Total Sales",
+            "expression": [
+              "",
+              "VAR __ValueCurrentPeriod = [QTD Total Sales]",
+              "VAR __ValuePreviousPeriod = [PQC Total Sales]",
+              "VAR __Result =",
+              "    IF (",
+              "        NOT ISBLANK ( __ValueCurrentPeriod ) && NOT ISBLANK ( __ValuePreviousPeriod ),",
+              "        __ValueCurrentPeriod - __ValuePreviousPeriod",
+              "    )",
+              "RETURN",
+              "    __Result"
+            ],
+            "lineageTag": "de8905a8-2f34-45ca-9784-c2617bd76905"
+          },
+          {
+            "name": "QDTOPQ % Total Sales",
+            "annotations": [
+              {
+                "name": "SQLBI_Template",
+                "value": "TimeIntelligence"
+              },
+              {
+                "name": "SQLBI_TimeIntelligence",
+                "value": "Standard"
+              },
+              {
+                "name": "SQLBI_CalendarType",
+                "value": "Calendar"
+              }
+            ],
+            "displayFolder": "Time intelligence\\Growth over full period\\Total Sales",
+            "expression": [
+              "",
+              "DIVIDE ( ",
+              "    [QTDOPQ Total Sales],",
+              "    [PQC Total Sales]",
+              ")"
+            ],
+            "formatString": "0.00%",
+            "lineageTag": "d02aecec-2126-4f9c-b1e3-ea69c8d87ed8"
+          },
+          {
+            "name": "PMC Total Sales",
+            "annotations": [
+              {
+                "name": "SQLBI_Template",
+                "value": "TimeIntelligence"
+              },
+              {
+                "name": "SQLBI_TimeIntelligence",
+                "value": "Standard"
+              },
+              {
+                "name": "SQLBI_CalendarType",
+                "value": "Calendar"
+              }
+            ],
+            "displayFolder": "Time intelligence\\Growth over full period\\Total Sales",
+            "expression": [
+              "",
+              "IF (",
+              "    [_ShowValueForDates],",
+              "    CALCULATE (",
+              "        [Total Sales],",
+              "        PARALLELPERIOD ( 'Date'[Date], -1, MONTH )",
+              "    )",
+              ")"
+            ],
+            "lineageTag": "dd49839c-da70-40be-8bfe-92d94118397c"
+          },
+          {
+            "name": "MTDOPM Total Sales",
+            "annotations": [
+              {
+                "name": "SQLBI_Template",
+                "value": "TimeIntelligence"
+              },
+              {
+                "name": "SQLBI_TimeIntelligence",
+                "value": "Standard"
+              },
+              {
+                "name": "SQLBI_CalendarType",
+                "value": "Calendar"
+              }
+            ],
+            "displayFolder": "Time intelligence\\Growth over full period\\Total Sales",
+            "expression": [
+              "",
+              "VAR __ValueCurrentPeriod = [MTD Total Sales]",
+              "VAR __ValuePreviousPeriod = [PMC Total Sales]",
+              "VAR __Result =",
+              "    IF (",
+              "        NOT ISBLANK ( __ValueCurrentPeriod ) && NOT ISBLANK ( __ValuePreviousPeriod ),",
+              "        __ValueCurrentPeriod - __ValuePreviousPeriod",
+              "    )",
+              "RETURN",
+              "    __Result"
+            ],
+            "lineageTag": "2c806771-0a81-41a2-b9a5-940721311861"
+          },
+          {
+            "name": "MTDOPM % Total Sales",
+            "annotations": [
+              {
+                "name": "SQLBI_Template",
+                "value": "TimeIntelligence"
+              },
+              {
+                "name": "SQLBI_TimeIntelligence",
+                "value": "Standard"
+              },
+              {
+                "name": "SQLBI_CalendarType",
+                "value": "Calendar"
+              }
+            ],
+            "displayFolder": "Time intelligence\\Growth over full period\\Total Sales",
+            "expression": [
+              "",
+              "DIVIDE ( ",
+              "    [MTDOPM Total Sales],",
+              "    [PMC Total Sales]",
+              ")"
+            ],
+            "formatString": "0.00%",
+            "lineageTag": "b58044bc-6266-4564-bc1f-07cea52e4e88"
+          },
+          {
+            "name": "MAT Total Sales",
+            "annotations": [
+              {
+                "name": "SQLBI_Template",
+                "value": "TimeIntelligence"
+              },
+              {
+                "name": "SQLBI_TimeIntelligence",
+                "value": "Standard"
+              },
+              {
+                "name": "SQLBI_CalendarType",
+                "value": "Calendar"
+              }
+            ],
+            "displayFolder": "Time intelligence\\Moving annual growth\\Total Sales",
+            "expression": [
+              "",
+              "IF (",
+              "    [_ShowValueForDates],",
+              "    CALCULATE (",
+              "        [Total Sales],",
+              "        DATESINPERIOD (",
+              "            'Date'[Date],",
+              "            MAX ( 'Date'[Date] ),",
+              "            -1,",
+              "            YEAR",
+              "        )",
+              "    )",
+              ")"
+            ],
+            "lineageTag": "0754843b-e173-43d7-b506-ef41c42ea477"
+          },
+          {
+            "name": "PYMAT Total Sales",
+            "annotations": [
+              {
+                "name": "SQLBI_Template",
+                "value": "TimeIntelligence"
+              },
+              {
+                "name": "SQLBI_TimeIntelligence",
+                "value": "Standard"
+              },
+              {
+                "name": "SQLBI_CalendarType",
+                "value": "Calendar"
+              }
+            ],
+            "displayFolder": "Time intelligence\\Moving annual growth\\Total Sales",
+            "expression": [
+              "",
+              "IF (",
+              "    [_ShowValueForDates],",
+              "    CALCULATE (",
+              "        [MAT Total Sales],",
+              "        DATEADD ( 'Date'[Date], -1, YEAR )",
+              "    )",
+              ")"
+            ],
+            "lineageTag": "c4e5af42-c180-4d05-888c-45770723e02d"
+          },
+          {
+            "name": "MATG Total Sales",
+            "annotations": [
+              {
+                "name": "SQLBI_Template",
+                "value": "TimeIntelligence"
+              },
+              {
+                "name": "SQLBI_TimeIntelligence",
+                "value": "Standard"
+              },
+              {
+                "name": "SQLBI_CalendarType",
+                "value": "Calendar"
+              }
+            ],
+            "displayFolder": "Time intelligence\\Moving annual growth\\Total Sales",
+            "expression": [
+              "",
+              "VAR __ValueCurrentPeriod = [MAT Total Sales]",
+              "VAR __ValuePreviousPeriod = [PYMAT Total Sales]",
+              "VAR __Result =",
+              "    IF (",
+              "        NOT ISBLANK ( __ValueCurrentPeriod ) && NOT ISBLANK ( __ValuePreviousPeriod ),",
+              "        __ValueCurrentPeriod - __ValuePreviousPeriod",
+              "    )",
+              "RETURN",
+              "    __Result"
+            ],
+            "lineageTag": "00fe6597-c92e-4bc1-a895-07a44f7757b0"
+          },
+          {
+            "name": "MATG % Total Sales",
+            "annotations": [
+              {
+                "name": "SQLBI_Template",
+                "value": "TimeIntelligence"
+              },
+              {
+                "name": "SQLBI_TimeIntelligence",
+                "value": "Standard"
+              },
+              {
+                "name": "SQLBI_CalendarType",
+                "value": "Calendar"
+              }
+            ],
+            "displayFolder": "Time intelligence\\Moving annual growth\\Total Sales",
+            "expression": [
+              "",
+              "DIVIDE ( ",
+              "    [MATG Total Sales],",
+              "    [PYMAT Total Sales]",
+              ")"
+            ],
+            "formatString": "0.00%",
+            "lineageTag": "930848c7-2231-4d25-b493-e3e55a560fa7"
+          },
+          {
+            "name": "Employee Name",
+            "displayFolder": "Table Dyamics",
+            "expression": [
+              "",
+              "",
+              "VAR _Selected_Top_Bottom_N = 'Top-Bottom-N'[Top-Bottom-N Value]",
+              "",
+              "VAR _Rank_Middle_Empty_Bar =",
+              "RANKX( FILTER( ALL( DimEmployee[EmployeeKey] ),NOT ISBLANK( [MTD Total Sales] )) , [MOMTD % Total Sales], , DESC ) ",
+              "",
+              "VAR _Rank_Middle_Empty_Bar_MTD =",
+              "RANKX( FILTER( ALL( DimEmployee[EmployeeKey] ),NOT ISBLANK( [MTD Total Sales] )) , [MTD Total Sales], , DESC ) ",
+              "",
+              "VAR _Result_1 =",
+              "IF( ",
+              "    _Rank_Middle_Empty_Bar IN { _Selected_Top_Bottom_N + 1, _Selected_Top_Bottom_N + 2}, \"⋮\",",
+              "    SELECTEDVALUE( DimEmployee[FirstName] ) & \" \" & SELECTEDVALUE( DimEmployee[LastName]) ",
+              ")",
+              "",
+              "VAR _Result_2 =",
+              "IF( ",
+              "    _Rank_Middle_Empty_Bar_MTD IN { _Selected_Top_Bottom_N + 1, _Selected_Top_Bottom_N + 2}, \"⋮\",",
+              "    SELECTEDVALUE( DimEmployee[FirstName] ) & \" \" & SELECTEDVALUE( DimEmployee[LastName]) ",
+              ")",
+              "",
+              "VAR _Result = ",
+              "IF( ",
+              "    SELECTEDVALUE( 'Actuals-vs-PctChange'[Top-Bottom-Field] ) = \"MTD Sales\", ",
+              "    _Result_2, _Result_1 )",
+              "",
+              "RETURN _Result ",
+              ""
+            ],
+            "lineageTag": "4fb3effd-53d4-462d-9f48-8a7f11d76a54"
+          },
+          {
+            "name": "vs Previous Month",
+            "displayFolder": "Table Dyamics",
+            "expression": [
+              "",
+              "",
+              "VAR _Selected_Top_Bottom_N = 'Top-Bottom-N'[Top-Bottom-N Value]",
+              "",
+              "VAR _Rank_Middle_Empty_Bar =",
+              "RANKX( FILTER( ALL( DimEmployee[EmployeeKey] ),NOT ISBLANK( [MTD Total Sales] )) , [MOMTD % Total Sales], , DESC ) ",
+              "",
+              "VAR _Rank_Middle_Empty_Bar_MTD =",
+              "RANKX( FILTER( ALL( DimEmployee[EmployeeKey] ),NOT ISBLANK( [MTD Total Sales] )) , [MTD Total Sales], , DESC ) ",
+              "",
+              "VAR _Result_1 =",
+              "IF( ",
+              "    _Rank_Middle_Empty_Bar IN { _Selected_Top_Bottom_N + 1, _Selected_Top_Bottom_N + 2}, BLANK(),",
+              "    [MOMTD % Total Sales]",
+              ")",
+              "",
+              "VAR _Result_2 =",
+              "IF( ",
+              "    _Rank_Middle_Empty_Bar_MTD IN { _Selected_Top_Bottom_N + 1, _Selected_Top_Bottom_N + 2}, BLANK(),",
+              "    [MTD Total Sales]",
+              ")",
+              "",
+              "VAR _Result =",
+              "IF( ",
+              "    SELECTEDVALUE( 'Actuals-vs-PctChange'[Top-Bottom-Field]) = \"MTD Sales\",",
+              "    _Result_2, _Result_1",
+              ")",
+              "",
+              "",
+              "RETURN _Result "
+            ],
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "13abb6d4-b70d-4fd5-8c28-fbfa9cf3bbc7"
+          },
+          {
+            "name": "vs PM MOM%",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isCustom\":true}"
+              }
+            ],
+            "displayFolder": "Table Dyamics",
+            "expression": [
+              "",
+              "",
+              "VAR _Selected_Top_Bottom_N = 'Top-Bottom-N'[Top-Bottom-N Value]",
+              "",
+              "VAR _Rank_Middle_Empty_Bar =",
+              "RANKX( FILTER( ALL( DimEmployee[EmployeeKey] ),NOT ISBLANK( [MTD Total Sales] )) , [MOMTD % Total Sales], , DESC )",
+              "",
+              "VAR _Rank_Middle_Empty_Bar_MTD =",
+              "RANKX( FILTER( ALL( DimEmployee[EmployeeKey] ),NOT ISBLANK( [MTD Total Sales] )) , [MTD Total Sales], , DESC )  ",
+              "",
+              "VAR _Result_1 =",
+              "IF( ",
+              "    _Rank_Middle_Empty_Bar IN { _Selected_Top_Bottom_N + 1, _Selected_Top_Bottom_N + 2}, \"⋮\",",
+              "    [MOMTD % Total Sales] ",
+              ")",
+              "",
+              "VAR _Result_2 =",
+              "IF( ",
+              "    _Rank_Middle_Empty_Bar_MTD IN { _Selected_Top_Bottom_N + 1, _Selected_Top_Bottom_N + 2}, \"⋮\",",
+              "    [MOMTD % Total Sales] ",
+              ")",
+              "",
+              "VAR _Result = ",
+              "IF(",
+              "    SELECTEDVALUE( 'Actuals-vs-PctChange'[Top-Bottom-Field] ) =\"MTD Sales\", _Result_2, _Result_1 )",
+              "",
+              "",
+              "RETURN _Result ",
+              ""
+            ],
+            "formatString": "▲ 0.0%; ▼ -0.0%",
+            "lineageTag": "8b364965-b9ff-4062-921f-128f31f98c7f"
+          },
+          {
+            "name": "CF Table",
+            "displayFolder": "Table Dyamics",
+            "expression": [
+              "",
+              "VAR _Selected_Top_Bottom_N = 'Top-Bottom-N'[Top-Bottom-N Value]",
+              "",
+              "VAR _Rank_Middle_Empty_Bar =",
+              "RANKX( FILTER( ALL( DimEmployee[EmployeeKey] ),NOT ISBLANK( [MTD Total Sales] )) , [MOMTD % Total Sales], , DESC ) ",
+              "",
+              "VAR _Rank_Middle_Empty_Bar_MTD =",
+              "RANKX( FILTER( ALL( DimEmployee[EmployeeKey] ),NOT ISBLANK( [MTD Total Sales] )) , [MTD Total Sales], , DESC )",
+              "",
+              "VAR _Result_1 =",
+              "IF( ",
+              "    _Rank_Middle_Empty_Bar IN { _Selected_Top_Bottom_N + 1, _Selected_Top_Bottom_N + 2}, \"white\",",
+              "    \"black\"",
+              ")",
+              "",
+              "VAR _Result_2 =",
+              "IF( ",
+              "    _Rank_Middle_Empty_Bar_MTD IN { _Selected_Top_Bottom_N + 1, _Selected_Top_Bottom_N + 2}, \"white\",",
+              "    \"black\"",
+              ")",
+              " ",
+              "",
+              "VAR _Result = ",
+              "IF( ",
+              "    SELECTEDVALUE( 'Actuals-vs-PctChange'[Top-Bottom-Field] ) = \"MTD Sales\", ",
+              "    _Result_2, _Result_1 )",
+              "",
+              "",
+              "RETURN _Result "
+            ],
+            "lineageTag": "2626d349-bdbd-4715-9c4c-73ca522c7388"
+          },
+          {
+            "name": "Number of Employees with Positive Change",
+            "displayFolder": "-KPI- Positive Change",
+            "expression": [
+              "",
+              "COUNTX( ",
+              "    FILTER( ALL( DimEmployee[EmployeeKey] ), [MOMTD Total Sales] > 0 ),",
+              "    DimEmployee[EmployeeKey] )"
+            ],
+            "formatString": "0",
+            "lineageTag": "436bd3a1-7b6f-41d5-a9fb-161a5811dec8"
+          },
+          {
+            "name": "Employees with Positive Change %",
+            "displayFolder": "-KPI- Positive Change",
+            "expression": [
+              "",
+              "VAR _Total_Employees = CALCULATE( COUNT( DimEmployee[EmployeeKey] ), ALL( DimEmployee ) )",
+              "",
+              "VAR _Result = DIVIDE([Number of Employees with Positive Change] , _Total_Employees )",
+              "",
+              "RETURN _Result "
+            ],
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "d3c01ce8-bd22-4987-9a2e-e1224fc28ccd"
+          },
+          {
+            "name": "Employees Avg MTD % Change",
+            "displayFolder": "-KPI-Avg MTD % Change",
+            "expression": [
+              "",
+              "",
+              "AVERAGEX( ALL( DimEmployee[EmployeeKey] ), [MOMTD % Total Sales] )"
+            ],
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "611f0cc7-eafd-41a9-9725-162c1f828590"
+          },
+          {
+            "name": "Employees Avg MTD Sales",
+            "displayFolder": "-KPI- Avg MTD Sales",
+            "expression": [
+              "",
+              "AVERAGEX( ALLSELECTED( DimEmployee[EmployeeKey] ), [MTD Total Sales] )"
+            ],
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "lineageTag": "3f3818d7-7ce5-443f-8498-0d4a848c4b24"
+          },
+          {
+            "name": "Number of Employees selling more than 100K MTD",
+            "displayFolder": "-KPI-Number of Employees Sold more than 100K",
+            "expression": [
+              "",
+              "COUNTX( FILTER( ALL( DimEmployee[EmployeeKey] ), [MTD Total Sales] >= 100000 ), DimEmployee[EmployeeKey] )"
+            ],
+            "formatString": "0",
+            "lineageTag": "92d414c4-e34b-4136-b744-6e920d4f6c23"
+          },
+          {
+            "name": "Table MTD Sales",
+            "displayFolder": "Table Dyamics",
+            "expression": [
+              "",
+              "",
+              "VAR _Selected_Top_Bottom_N = 'Top-Bottom-N'[Top-Bottom-N Value]",
+              "",
+              "VAR _Rank_Middle_Empty_Bar =",
+              "RANKX( FILTER( ALL( DimEmployee[EmployeeKey] ),NOT ISBLANK( [MTD Total Sales] )) , [MOMTD % Total Sales], , DESC ) ",
+              "",
+              "VAR _Rank_Middle_Empty_Bar_MTD =",
+              "RANKX( FILTER( ALL( DimEmployee[EmployeeKey] ),NOT ISBLANK( [MTD Total Sales] )) , [MTD Total Sales], , DESC ) ",
+              "",
+              "VAR _Result_1 =",
+              "IF( ",
+              "    _Rank_Middle_Empty_Bar IN { _Selected_Top_Bottom_N + 1, _Selected_Top_Bottom_N + 2}, \"⋮\",",
+              "    FORMAT( [MTD Total Sales], \"$#,##0\") ",
+              ")",
+              "",
+              "VAR _Result_2 = ",
+              "IF( ",
+              "    _Rank_Middle_Empty_Bar_MTD IN { _Selected_Top_Bottom_N + 1, _Selected_Top_Bottom_N + 2}, \"⋮\",",
+              "    FORMAT( [MTD Total Sales], \"$#,##0\") ",
+              ")",
+              "",
+              "VAR _Result =",
+              "IF( ",
+              "    SELECTEDVALUE( 'Actuals-vs-PctChange'[Top-Bottom-Field]) = \"MTD Sales\",",
+              "    _Result_2, _Result_1",
+              ")",
+              "",
+              "",
+              "",
+              "RETURN _Result ",
+              ""
+            ],
+            "lineageTag": "a6a4a6a2-59dc-4d1b-844d-d8e022b86118"
+          },
+          {
+            "name": "Return Quantity",
+            "expression": "SUM( FactSales[ReturnQuantity] )",
+            "formatString": "0",
+            "lineageTag": "40ab80e2-29b7-4fd6-9cbb-e72ff91379c6"
+          },
+          {
+            "name": "Profit",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "SUMX( FactSales, FactSales[SalesAmount] - FactSales[TotalCost] )",
+            "lineageTag": "b1e8d60a-dcf1-4822-9c74-05dca6682411"
+          },
+          {
+            "name": "Profit Margin",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "DIVIDE( [Profit] , [Total Sales] )",
+            "lineageTag": "b3183ca7-1b0f-484c-be72-b19ede867a16"
+          },
+          {
+            "name": "Total Discount",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "SUM( FactSales[DiscountAmount] )",
+            "lineageTag": "c10b61e9-4f6b-47c8-96db-14fbaba4a8db"
+          },
+          {
+            "name": "Quantity Sold",
+            "expression": "SUM( FactSales[SalesQuantity] )",
+            "formatString": "0",
+            "lineageTag": "35088c52-7ac7-4fef-8f7b-fc91996e33ba"
+          },
+          {
+            "name": "Rank Filtering Employyees MTD% CF",
+            "displayFolder": "Table Dyamics",
+            "expression": [
+              "",
+              "",
+              "VAR _Selected_Top_Bottom_N = 'Top-Bottom-N'[Top-Bottom-N Value]",
+              "",
+              "VAR _Rank_Asc =",
+              "TOPN( ",
+              "    _Selected_Top_Bottom_N ,",
+              "    FILTER( ALL( DimEmployee[EmployeeKey] ),",
+              "            NOT ISBLANK( [MTD Total Sales] ) ",
+              "        ),",
+              "    [MOMTD % Total Sales], ASC )",
+              "",
+              "VAR _Rank_Desc =",
+              "TOPN( ",
+              "    _Selected_Top_Bottom_N ,",
+              "    FILTER( ALL( DimEmployee[EmployeeKey] ),",
+              "            NOT ISBLANK( [MTD Total Sales] ) ",
+              "        ),",
+              "    [MOMTD % Total Sales], DESC )",
+              "",
+              "VAR _Rank_Middle_Empty_Bar =",
+              "RANKX( FILTER( ALL( DimEmployee[EmployeeKey] ),NOT ISBLANK( [MTD Total Sales] )) , [MOMTD % Total Sales], , DESC ) ",
+              "",
+              "VAR _Result =",
+              "IF(",
+              "    SELECTEDVALUE( 'Actuals-vs-PctChange'[Top-Bottom-Field] ) = \"MOM% Sales\",",
+              "    SWITCH( ",
+              "        TRUE(),",
+              "        SELECTEDVALUE( DimEmployee[EmployeeKey] ) IN _Rank_Asc, \"#A30024\",",
+              "        SELECTEDVALUE( DimEmployee[EmployeeKey] ) IN _Rank_Desc, \"#0D4FBD\",",
+              "        \"black\"",
+              "    ),",
+              "    \"black\"",
+              ")",
+              "",
+              "RETURN _Result"
+            ],
+            "lineageTag": "d0968c6b-3b06-43d4-9883-a68d8737b066"
+          },
+          {
+            "name": "Rank",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "displayFolder": "Table Dyamics",
+            "expression": [
+              "",
+              "",
+              "VAR _Selected_Top_Bottom_N = 'Top-Bottom-N'[Top-Bottom-N Value]",
+              "",
+              "VAR _Rank_Middle_Empty_Bar =",
+              "RANKX( FILTER( ALL( DimEmployee[EmployeeKey] ),NOT ISBLANK( [MTD Total Sales] )) , [MOMTD % Total Sales], , DESC ) ",
+              "",
+              "VAR _Rank_Middle_Empty_Bar_MTD =",
+              "RANKX( FILTER( ALL( DimEmployee[EmployeeKey] ),NOT ISBLANK( [MTD Total Sales] )) , [MTD Total Sales], , DESC ) ",
+              "",
+              "",
+              "VAR _Result =",
+              "IF( ",
+              "    SELECTEDVALUE( 'Actuals-vs-PctChange'[Top-Bottom-Field]) = \"MTD Sales\",",
+              "    _Rank_Middle_Empty_Bar_MTD, _Rank_Middle_Empty_Bar",
+              ")",
+              "",
+              "",
+              "RETURN _Result "
+            ],
+            "lineageTag": "6f2d6072-7ab5-4908-b5b3-1fe8bd0682c3"
+          },
+          {
+            "name": "Rank Filtering Employyees Sales MTD CF",
+            "displayFolder": "Table Dyamics",
+            "expression": [
+              "",
+              "",
+              "VAR _Selected_Top_Bottom_N = 'Top-Bottom-N'[Top-Bottom-N Value]",
+              "",
+              "VAR _Rank_Asc =",
+              "TOPN( ",
+              "    _Selected_Top_Bottom_N ,",
+              "    FILTER( ALL(DimEmployee[EmployeeKey]), NOT ISBLANK( [MTD Total Sales] ) &&",
+              "    NOT ISBLANK( DimEmployee[EmployeeKey] ) ),",
+              "    [MTD Total Sales], ASC )",
+              "",
+              "VAR _Rank_Desc =",
+              "TOPN( ",
+              "    _Selected_Top_Bottom_N ,",
+              "    FILTER( ALL(DimEmployee[EmployeeKey]), NOT ISBLANK( [MTD Total Sales] )  &&",
+              "    NOT ISBLANK( DimEmployee[EmployeeKey] ) ),",
+              "    [MTD Total Sales], DESC )",
+              "",
+              "VAR _Result =",
+              "IF(",
+              "    SELECTEDVALUE( 'Actuals-vs-PctChange'[Top-Bottom-Field] ) = \"MTD Sales\",",
+              "    SWITCH( ",
+              "        TRUE(),",
+              "        SELECTEDVALUE( DimEmployee[EmployeeKey] ) IN _Rank_Asc, \"#A30024\",",
+              "        SELECTEDVALUE( DimEmployee[EmployeeKey] ) IN _Rank_Desc, \"#0D4FBD\",",
+              "        \"black\"",
+              "    ),",
+              "    \"black\"",
+              ")",
+              "",
+              "RETURN _Result"
+            ],
+            "lineageTag": "a8824d89-e901-498e-b31f-58062e43834e"
+          },
+          {
+            "name": "Rank Filtering Employyees MTD%",
+            "displayFolder": "Table Dyamics",
+            "expression": [
+              "",
+              "",
+              "VAR _Selected_Top_Bottom_N = 'Top-Bottom-N'[Top-Bottom-N Value]",
+              "",
+              "VAR _Rank_Asc =",
+              "TOPN( ",
+              "    _Selected_Top_Bottom_N ,",
+              "    FILTER( ALL( DimEmployee[EmployeeKey] ),",
+              "            NOT ISBLANK( [MTD Total Sales] ) ",
+              "        ),",
+              "    [MOMTD % Total Sales], ASC )",
+              "",
+              "VAR _Rank_Desc =",
+              "TOPN( ",
+              "    _Selected_Top_Bottom_N ,",
+              "    FILTER( ALL( DimEmployee[EmployeeKey] ),",
+              "            NOT ISBLANK( [MTD Total Sales] ) ",
+              "        ),",
+              "    [MOMTD % Total Sales], DESC )",
+              "",
+              "VAR _Rank_Middle_Empty_Bar =",
+              "RANKX( FILTER( ALL( DimEmployee[EmployeeKey] ),NOT ISBLANK( [MTD Total Sales] )) , [MOMTD % Total Sales], , DESC ) ",
+              "",
+              "VAR _Result =",
+              "SWITCH( ",
+              "    TRUE(),",
+              "    SELECTEDVALUE( DimEmployee[EmployeeKey] ) IN _Rank_Asc, 1,",
+              "    SELECTEDVALUE( DimEmployee[EmployeeKey] ) IN _Rank_Desc, 1,",
+              "    _Rank_Middle_Empty_Bar IN { _Selected_Top_Bottom_N + 1, _Selected_Top_Bottom_N + 2}, 1,",
+              "    0 ",
+              ")",
+              "",
+              "RETURN _Result"
+            ],
+            "formatString": "0",
+            "lineageTag": "24a8d237-0627-434f-b6d9-d5c3d0b6a394"
+          },
+          {
+            "name": "Rank Filtering Employyees MTD",
+            "displayFolder": "Table Dyamics",
+            "expression": [
+              "",
+              "",
+              "VAR _Selected_Top_Bottom_N = 'Top-Bottom-N'[Top-Bottom-N Value]",
+              "",
+              "VAR _Rank_Asc =",
+              "TOPN( ",
+              "    _Selected_Top_Bottom_N ,",
+              "    FILTER( ALL(DimEmployee[EmployeeKey]), NOT ISBLANK( [MTD Total Sales] ) &&",
+              "    NOT ISBLANK( DimEmployee[EmployeeKey] ) ),",
+              "    [MTD Total Sales], ASC )",
+              "",
+              "VAR _Rank_Desc =",
+              "TOPN( ",
+              "    _Selected_Top_Bottom_N ,",
+              "    FILTER( ALL(DimEmployee[EmployeeKey]), NOT ISBLANK( [MTD Total Sales] )  &&",
+              "    NOT ISBLANK( DimEmployee[EmployeeKey] ) ),",
+              "    [MTD Total Sales], DESC )",
+              "",
+              "VAR _Rank_Middle_Empty_Bar =",
+              "RANKX( ALL( DimEmployee[EmployeeKey] ) , [MTD Total Sales], , DESC ) ",
+              "",
+              "VAR _Result =",
+              "SWITCH( ",
+              "    TRUE(),",
+              "    SELECTEDVALUE( DimEmployee[EmployeeKey] ) IN _Rank_Asc, 1,",
+              "    SELECTEDVALUE( DimEmployee[EmployeeKey] ) IN _Rank_Desc, 1,",
+              "    _Rank_Middle_Empty_Bar IN {_Selected_Top_Bottom_N + 1, _Selected_Top_Bottom_N + 2 }, 1,",
+              "    0 ",
+              ")",
+              "",
+              "RETURN _Result"
+            ],
+            "formatString": "0",
+            "lineageTag": "94102cde-6ade-48d6-971a-f31285d9f8f5"
+          },
+          {
+            "name": "Rank Filtering Dynamics",
+            "displayFolder": "Table Dyamics",
+            "expression": [
+              "",
+              "",
+              "VAR _Selected_Field = SELECTEDVALUE( 'Actuals-vs-PctChange'[Top-Bottom-Field] )",
+              "",
+              "RETURN",
+              "IF( ",
+              "    _Selected_Field = \"MTD Sales\", [Rank Filtering Employyees MTD],",
+              "    [Rank Filtering Employyees MTD%] )"
+            ],
+            "formatString": "0",
+            "lineageTag": "10803b0b-ec50-469c-90b5-bac656121fde"
+          },
+          {
+            "name": "TopN/BottomN/ MTD Sales",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "displayFolder": "Dynamic Bar Charts",
+            "expression": [
+              "",
+              "",
+              "VAR _N = 'Top-Bottom-N'[Top-Bottom-N Value] ",
+              "",
+              "VAR _Avg_MTD_Asc =",
+              "CALCULATE( ",
+              "    [MTD Total Sales],",
+              "    FILTER( ALL(DimEmployee[EmployeeKey]), NOT ISBLANK([MTD Total Sales]) && NOT ISBLANK( DimEmployee[EmployeeKey] ) &&",
+              "     [Rank MTD Asc] <= _N ) ",
+              ")",
+              "",
+              "VAR _Avg_MTD_Desc =",
+              "CALCULATE( ",
+              "    [MTD Total Sales],",
+              "    FILTER( ALL(DimEmployee[EmployeeKey]), NOT ISBLANK([MTD Total Sales]) && NOT ISBLANK( DimEmployee[EmployeeKey] ) &&",
+              "     [Rank MTD Desc] <= _N ) ",
+              ")",
+              "",
+              "VAR _Avg_MTD_Others =",
+              "CALCULATE( ",
+              "    [MTD Total Sales],",
+              "    FILTER( ALL(DimEmployee[EmployeeKey]), NOT ISBLANK([MTD Total Sales]) && NOT ISBLANK( DimEmployee[EmployeeKey] ) &&",
+              "     [Rank MTD Desc] > _N && [Rank MTD Desc] > _N ) ",
+              ")",
+              "",
+              "RETURN ",
+              "SWITCH( ",
+              "    TRUE(),",
+              "    SELECTEDVALUE( 'Clustered Employees'[Order] ) = 1, _Avg_MTD_Desc, ",
+              "    SELECTEDVALUE( 'Clustered Employees'[Order] ) = 2, _Avg_MTD_Others, ",
+              "    SELECTEDVALUE( 'Clustered Employees'[Order] ) = 3, _Avg_MTD_Asc",
+              ")",
+              "",
+              ""
+            ],
+            "lineageTag": "71316b70-8ca0-4a69-98d0-15d32222a50a"
+          },
+          {
+            "name": "Rank MTD Asc",
+            "displayFolder": "Dynamic Bar Charts",
+            "expression": [
+              "",
+              "RANKX(  ",
+              "    FILTER( ALL(DimEmployee[EmployeeKey]), NOT ISBLANK([MTD Total Sales]) && NOT ISBLANK( DimEmployee[EmployeeKey] ) ),",
+              "    IF( SELECTEDVALUE( 'Actuals-vs-PctChange'[Top-Bottom-Field] ) = \"MTD Sales\",",
+              "        [MTD Total Sales], [MOMTD % Total Sales] ",
+              "    ), , ASC ",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "c490a661-d086-46b0-9589-1483e5afb330"
+          },
+          {
+            "name": "Rank MTD Desc",
+            "displayFolder": "Dynamic Bar Charts",
+            "expression": [
+              "",
+              "RANKX(  ",
+              "    FILTER( ALL(DimEmployee[EmployeeKey]), NOT ISBLANK([MTD Total Sales]) && NOT ISBLANK( DimEmployee[EmployeeKey] ) ),",
+              "    IF( SELECTEDVALUE( 'Actuals-vs-PctChange'[Top-Bottom-Field] ) = \"MTD Sales\",",
+              "        [MTD Total Sales], [MOMTD % Total Sales] ",
+              "    ), , DESC ",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "6530f2e8-4791-4aef-932f-adc807b982ab"
+          },
+          {
+            "name": "TopN/BottomN/ Avg MTD Sales",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "displayFolder": "Dynamic Bar Charts",
+            "expression": [
+              "",
+              "",
+              "VAR _N = 'Top-Bottom-N'[Top-Bottom-N Value] ",
+              "",
+              "VAR _Avg_MTD_Asc =",
+              "CALCULATE( ",
+              "    [Employees Avg MTD Sales - Adjusted],",
+              "    FILTER( ALL(DimEmployee[EmployeeKey]), NOT ISBLANK([MTD Total Sales]) && NOT ISBLANK( DimEmployee[EmployeeKey] ) &&",
+              "     [Rank MTD Asc] <= _N ) ",
+              ")",
+              "",
+              "VAR _Avg_MTD_Desc =",
+              "CALCULATE( ",
+              "    [Employees Avg MTD Sales - Adjusted],",
+              "    FILTER( ALL(DimEmployee[EmployeeKey]), NOT ISBLANK([MTD Total Sales]) && NOT ISBLANK( DimEmployee[EmployeeKey] ) &&",
+              "     [Rank MTD Desc] <= _N ) ",
+              ")",
+              "",
+              "VAR _Avg_MTD_Others =",
+              "CALCULATE( ",
+              "    [Employees Avg MTD Sales - Adjusted],",
+              "    FILTER( ALL(DimEmployee[EmployeeKey]), NOT ISBLANK([MTD Total Sales]) && NOT ISBLANK( DimEmployee[EmployeeKey] ) &&",
+              "     [Rank MTD Desc] > _N && [Rank MTD Desc] > _N ) ",
+              ")",
+              "",
+              "RETURN ",
+              "SWITCH( ",
+              "    TRUE(),",
+              "    SELECTEDVALUE( 'Clustered Employees'[Order] ) = 1, _Avg_MTD_Desc, ",
+              "    SELECTEDVALUE( 'Clustered Employees'[Order] ) = 2, _Avg_MTD_Others, ",
+              "    SELECTEDVALUE( 'Clustered Employees'[Order] ) = 3, _Avg_MTD_Asc",
+              ")",
+              "",
+              ""
+            ],
+            "lineageTag": "5df89928-ed81-40af-ae09-5f1f8c51cab7"
+          },
+          {
+            "name": "Employees Avg MTD Sales - Adjusted",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "displayFolder": "Dynamic Bar Charts",
+            "expression": [
+              "",
+              "AVERAGEX(",
+              "    FILTER( VALUES(DimEmployee[EmployeeKey]), NOT ISBLANK([MTD Total Sales]) && NOT ISBLANK( DimEmployee[EmployeeKey] ) ),",
+              "    [MTD Total Sales] )"
+            ],
+            "lineageTag": "5df0131f-13fc-4549-a93d-682a980e0694"
+          },
+          {
+            "name": "TopN/BottomN/ MTD % Change",
+            "displayFolder": "Dynamic Bar Charts",
+            "expression": [
+              "",
+              "",
+              "VAR _N = 'Top-Bottom-N'[Top-Bottom-N Value] ",
+              "",
+              "VAR _Avg_MTD_Asc =",
+              "CALCULATE( ",
+              "    [Employees Avg MTD % Change - Adjusted],",
+              "    FILTER( ALL(DimEmployee[EmployeeKey]), NOT ISBLANK([MTD Total Sales]) && NOT ISBLANK( DimEmployee[EmployeeKey] ) &&",
+              "     [Rank MTD Asc] <= _N ) ",
+              ")",
+              "",
+              "VAR _Avg_MTD_Desc =",
+              "CALCULATE( ",
+              "    [Employees Avg MTD % Change - Adjusted],",
+              "    FILTER( ALL(DimEmployee[EmployeeKey]), NOT ISBLANK([MTD Total Sales]) && NOT ISBLANK( DimEmployee[EmployeeKey] ) &&",
+              "     [Rank MTD Desc] <= _N ) ",
+              ")",
+              "",
+              "VAR _Avg_MTD_Others =",
+              "CALCULATE( ",
+              "    [Employees Avg MTD % Change - Adjusted],",
+              "    FILTER( ALL(DimEmployee[EmployeeKey]), NOT ISBLANK([MTD Total Sales]) && NOT ISBLANK( DimEmployee[EmployeeKey] ) &&",
+              "     [Rank MTD Desc] > _N && [Rank MTD Desc] > _N ) ",
+              ")",
+              "",
+              "RETURN ",
+              "SWITCH( ",
+              "    TRUE(),",
+              "    SELECTEDVALUE( 'Clustered Employees'[Order] ) = 1, _Avg_MTD_Desc, ",
+              "    SELECTEDVALUE( 'Clustered Employees'[Order] ) = 2, _Avg_MTD_Others, ",
+              "    SELECTEDVALUE( 'Clustered Employees'[Order] ) = 3, _Avg_MTD_Asc",
+              ")",
+              "",
+              ""
+            ],
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "7fad24bd-5cf7-4f40-8293-ebea837ba886"
+          },
+          {
+            "name": "Employees Avg MTD % Change - Adjusted",
+            "displayFolder": "Dynamic Bar Charts",
+            "expression": [
+              "",
+              "AVERAGEX(",
+              "    FILTER( VALUES(DimEmployee[EmployeeKey]), NOT ISBLANK([MTD Total Sales]) && NOT ISBLANK( DimEmployee[EmployeeKey] ) ),",
+              "    [MOMTD % Total Sales] )"
+            ],
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "95f3fe28-96a4-49e9-a7ba-1ad69099512a"
+          },
+          {
+            "name": "Employees Avg Total Discount - Adjusted",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "displayFolder": "Dynamic Bar Charts",
+            "expression": [
+              "",
+              "AVERAGEX(",
+              "    FILTER( VALUES(DimEmployee[EmployeeKey]), NOT ISBLANK([MTD Total Sales]) && NOT ISBLANK( DimEmployee[EmployeeKey] ) ),",
+              "    [MTD Total Discount] / [MTD Total Transactions] )"
+            ],
+            "lineageTag": "116177a2-06d5-4b10-9366-da235965066c"
+          },
+          {
+            "name": "TopN/BottomN/ Avg Total Discount",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "displayFolder": "Dynamic Bar Charts",
+            "expression": [
+              "",
+              "",
+              "VAR _N = 'Top-Bottom-N'[Top-Bottom-N Value] ",
+              "",
+              "VAR _Avg_MTD_Asc =",
+              "CALCULATE( ",
+              "    [Employees Avg Total Discount - Adjusted],",
+              "    FILTER( ALL(DimEmployee[EmployeeKey]), NOT ISBLANK([MTD Total Sales]) && NOT ISBLANK( DimEmployee[EmployeeKey] ) &&",
+              "     [Rank MTD Asc] <= _N ) ",
+              ")",
+              "",
+              "VAR _Avg_MTD_Desc =",
+              "CALCULATE( ",
+              "    [Employees Avg Total Discount - Adjusted],",
+              "    FILTER( ALL(DimEmployee[EmployeeKey]), NOT ISBLANK([MTD Total Sales]) && NOT ISBLANK( DimEmployee[EmployeeKey] ) &&",
+              "     [Rank MTD Desc] <= _N ) ",
+              ")",
+              "",
+              "VAR _Avg_MTD_Others =",
+              "CALCULATE( ",
+              "    [Employees Avg Total Discount - Adjusted],",
+              "    FILTER( ALL(DimEmployee[EmployeeKey]), NOT ISBLANK([MTD Total Sales]) && NOT ISBLANK( DimEmployee[EmployeeKey] ) &&",
+              "     [Rank MTD Desc] > _N && [Rank MTD Desc] > _N ) ",
+              ")",
+              "",
+              "RETURN ",
+              "SWITCH( ",
+              "    TRUE(),",
+              "    SELECTEDVALUE( 'Clustered Employees'[Order] ) = 1, _Avg_MTD_Desc, ",
+              "    SELECTEDVALUE( 'Clustered Employees'[Order] ) = 2, _Avg_MTD_Others, ",
+              "    SELECTEDVALUE( 'Clustered Employees'[Order] ) = 3, _Avg_MTD_Asc",
+              ")",
+              "",
+              ""
+            ],
+            "lineageTag": "61b5f597-792a-45b6-8e0f-66b2773674b5"
+          },
+          {
+            "name": "MTD Total Discount",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "",
+              "IF (",
+              "    [_ShowValueForDates],",
+              "    CALCULATE (",
+              "        [Total Discount],",
+              "        DATESMTD ( 'Date'[Date] )",
+              "    )",
+              ")"
+            ],
+            "lineageTag": "73cfb0fe-05d1-4ac7-838d-8cfe8c0d6b5b"
+          },
+          {
+            "name": "Transactions",
+            "expression": "COUNTROWS( FactSales ) ",
+            "formatString": "0",
+            "lineageTag": "0c26368b-9935-424a-9f78-4e3d0e8f65db"
+          },
+          {
+            "name": "MTD Total Transactions",
+            "expression": [
+              "",
+              "IF (",
+              "    [_ShowValueForDates],",
+              "    CALCULATE (",
+              "        [Transactions],",
+              "        DATESMTD ( 'Date'[Date] )",
+              "    )",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "83084964-07e1-463e-9649-cc4e3a648cc2"
+          },
+          {
+            "name": "MTD Discount per Transaction",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "",
+              "[MTD Total Discount] / [MTD Total Transactions]"
+            ],
+            "lineageTag": "29142700-ba60-45bd-94e8-c7fe205bf46d"
+          },
+          {
+            "name": "Number of Employees with Positive change PM",
+            "displayFolder": "-KPI- Positive Change",
+            "expression": [
+              "",
+              "IF (",
+              "    [_ShowValueForDates],",
+              "    CALCULATE (",
+              "        [Employees with Positive Change %],",
+              "        CALCULATETABLE (",
+              "            DATEADD ( 'Date'[Date], -1, MONTH ),",
+              "            'Date'[DateWithTransactions] = TRUE",
+              "        )",
+              "    )",
+              ")"
+            ],
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "b4b4fa60-1a58-4ca3-801a-56c343e8252a"
+          },
+          {
+            "name": "TopN/BottomN/ PMTD Sales",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "displayFolder": "Dynamic Bar Charts",
+            "expression": [
+              "",
+              "",
+              "VAR _N = 'Top-Bottom-N'[Top-Bottom-N Value] ",
+              "",
+              "VAR _Avg_MTD_Asc =",
+              "CALCULATE( ",
+              "    [PMTD Total Sales],",
+              "    FILTER( ALL(DimEmployee[EmployeeKey]), NOT ISBLANK([MTD Total Sales]) && NOT ISBLANK( DimEmployee[EmployeeKey] ) &&",
+              "     [Rank MTD Asc] <= _N ) ",
+              ")",
+              "",
+              "VAR _Avg_MTD_Desc =",
+              "CALCULATE( ",
+              "    [PMTD Total Sales],",
+              "    FILTER( ALL(DimEmployee[EmployeeKey]), NOT ISBLANK([MTD Total Sales]) && NOT ISBLANK( DimEmployee[EmployeeKey] ) &&",
+              "     [Rank MTD Desc] <= _N ) ",
+              ")",
+              "",
+              "VAR _Avg_MTD_Others =",
+              "CALCULATE( ",
+              "    [PMTD Total Sales],",
+              "    FILTER( ALL(DimEmployee[EmployeeKey]), NOT ISBLANK([MTD Total Sales]) && NOT ISBLANK( DimEmployee[EmployeeKey] ) &&",
+              "     [Rank MTD Desc] > _N && [Rank MTD Desc] > _N ) ",
+              ")",
+              "",
+              "RETURN ",
+              "SWITCH( ",
+              "    TRUE(),",
+              "    SELECTEDVALUE( 'Clustered Employees'[Order] ) = 1, _Avg_MTD_Desc, ",
+              "    SELECTEDVALUE( 'Clustered Employees'[Order] ) = 2, _Avg_MTD_Others, ",
+              "    SELECTEDVALUE( 'Clustered Employees'[Order] ) = 3, _Avg_MTD_Asc",
+              ")",
+              "",
+              ""
+            ],
+            "lineageTag": "9cf2bf0c-25cc-4700-b826-e96f9c8c44f2"
+          },
+          {
+            "name": "dummy",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "[PMTD Total Sales]",
+            "lineageTag": "eee3eb5c-71ed-4eda-93ea-ab160bd939f2"
+          },
+          {
+            "name": "dummy (negative Bar)",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "IF( [MTD Total Sales] <= [PMTD Total Sales], [MTD Total Sales] ) ",
+            "lineageTag": "8fabe660-d4d2-4ae8-81e7-77f2eab39d7d"
+          },
+          {
+            "name": "SVG 100% Stacked Bar Chart Employees Positive Change",
+            "dataCategory": "ImageUrl",
+            "displayFolder": "-KPI- Positive Change",
+            "expression": [
+              "",
+              "",
+              "VAR _goal = 0.55",
+              "VAR _to_goal = DIVIDE( [Employees with Positive Change %], _goal ) ",
+              "VAR _Adjusted_Width = _to_goal * 260",
+              "",
+              "VAR _Color_Lower_gradient = IF( _to_goal >= 0.8, \"#C6E3FF\", \"#F7C7D0\" )",
+              "VAR _Color_Upper_gradient = IF( _to_goal >= 0.8, \"#118DFF\", \"#DC143C\" )",
+              "",
+              "",
+              "VAR _Result = ",
+              "\"data:image/svg+xml;utf8, <svg width='300' height='30' xmlns='http://www.w3.org/2000/svg'>",
+              "  <!-- Define colors for the segments -->",
+              "   <linearGradient id='grad1' x1='0%' y1='0%' x2='100%' y2='0%'>",
+              "    <stop offset='0%' style='stop-color:\"&_Color_Lower_gradient&\";stop-opacity:1' />",
+              "    <stop offset='\" & FORMAT(_to_goal, \"0%\") & \"' style='stop-color:\"&_Color_Upper_gradient&\";stop-opacity:1' />",
+              "  </linearGradient>",
+              "  ",
+              "  <!-- Rounded rectangle background -->",
+              "  <rect x='0' y='7.5' width='260' height='15' rx='7' ry='7' fill='#cccccc' />",
+              "",
+              "  <!-- Data -->",
+              "  <rect x='0' y='7.5' width='\" & FORMAT(_Adjusted_Width, \"0\") & \"' height='15' rx='7' ry='7' fill='url(#grad1)' />",
+              "",
+              "  <!-- Vertical dashed line, at 80% -->",
+              "  <line x1='\" & 260*0.8 &\"' y1='2.5' x2='\" & 260*0.8 &\"' y2='27.5' stroke='black' stroke-dasharray='5,5' />",
+              "",
+              "</svg>\"",
+              "",
+              "",
+              "RETURN",
+              "    _Result",
+              ""
+            ],
+            "lineageTag": "c902e695-860d-4ff7-924b-f22d9ef12813"
+          },
+          {
+            "name": "Target Employees Positive Change %",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "displayFolder": "-KPI- Positive Change",
+            "expression": "0.55",
+            "lineageTag": "879161bf-ffbd-497a-a06c-7646702b16f2"
+          },
+          {
+            "name": "KPI, Positive Change towards Target",
+            "displayFolder": "-KPI- Positive Change",
+            "expression": [
+              "",
+              "VAR _value = DIVIDE( [Employees with Positive Change %], 0.55 )",
+              "VAR _indicator = IF( _value >= 0.8 , \"✔ \", \"✘ \")",
+              "VAR _Result =",
+              "REPT(\"‏‏‎ ‎\", 26) & _indicator & FORMAT( _value , \"0.0%\")",
+              "",
+              "RETURN  _Result"
+            ],
+            "lineageTag": "f3fac58a-d559-4b36-8c1d-9f50cb8083e7"
+          },
+          {
+            "name": "Employees Positive Change vs Previous Month",
+            "displayFolder": "-KPI- Positive Change",
+            "expression": [
+              "",
+              "VAR _Value = ",
+              "DIVIDE( ",
+              "    [Employees with Positive Change %] - [Number of Employees with Positive change PM],",
+              "    [Number of Employees with Positive change PM]",
+              ")",
+              "VAR _Indicator = ",
+              "IF( _Value > 0 , \"▲\", \"▼\" )",
+              "",
+              "RETURN ",
+              "REPT(\"‏‏‎ ‎\", 26) & ",
+              "_Indicator &",
+              "FORMAT( _Value, \"0.0%\") "
+            ],
+            "lineageTag": "2977b314-1ab5-435e-9494-891ae1443227"
+          },
+          {
+            "name": "KPI, Positive Change towards Target CF",
+            "displayFolder": "-KPI- Positive Change",
+            "expression": [
+              "",
+              "VAR _value = DIVIDE( [Employees with Positive Change %], 0.55 )",
+              "RETURN IF( _value >= 0.8 , \"green\", \"red\")",
+              ""
+            ],
+            "lineageTag": "37982a66-d0b4-4d4d-b7c4-93620996a4b5"
+          },
+          {
+            "name": "Employees Positive Change vs Previous Month CF",
+            "displayFolder": "-KPI- Positive Change",
+            "expression": [
+              "",
+              "IF( ",
+              "    [Number of Employees with Positive Change] > [Number of Employees with Positive change PM],",
+              "    \"green\", \"red\" ",
+              ")"
+            ],
+            "lineageTag": "54cf1ec0-ac05-4377-ab15-1e46d7bd7129"
+          },
+          {
+            "name": "Employees Avg MTD Sales PM",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "displayFolder": "-KPI- Avg MTD Sales",
+            "expression": [
+              "",
+              "IF (",
+              "    [_ShowValueForDates],",
+              "    CALCULATE (",
+              "        [Employees Avg MTD Sales],",
+              "        CALCULATETABLE (",
+              "            DATEADD ( 'Date'[Date], -1, MONTH ),",
+              "            'Date'[DateWithTransactions] = TRUE",
+              "        )",
+              "    )",
+              ")"
+            ],
+            "lineageTag": "7a410890-4458-4706-8ceb-d60648b68a9a"
+          },
+          {
+            "name": "Employees AVG MTD Sales Target",
+            "displayFolder": "-KPI- Avg MTD Sales",
+            "expression": "80000 ",
+            "formatString": "0",
+            "lineageTag": "be07d168-bb5d-4904-ae9a-43b59feda1ca"
+          },
+          {
+            "name": "SVG 100% Stacked Bar Chart Employees Avg MTD Sales",
+            "displayFolder": "-KPI- Avg MTD Sales",
+            "expression": [
+              "",
+              "",
+              "VAR _to_goal = DIVIDE( [Employees Avg MTD Sales], [Employees AVG MTD Sales Target] ) ",
+              "VAR _Adjusted_Width = _to_goal * 260",
+              "",
+              "VAR _Color_Lower_gradient = IF( _to_goal >= 0.8, \"#C6E3FF\", \"#F7C7D0\" )",
+              "VAR _Color_Upper_gradient = IF( _to_goal >= 0.8, \"#118DFF\", \"#DC143C\" )",
+              "",
+              "VAR _Result = ",
+              "\"data:image/svg+xml;utf8, <svg width='300' height='30' xmlns='http://www.w3.org/2000/svg'>",
+              "    <linearGradient id='grad1' x1='0%' y1='0%' x2='100%' y2='0%'>",
+              "    <stop offset='0%' style='stop-color:\"&_Color_Lower_gradient&\";stop-opacity:1' />",
+              "    <stop offset='\" & FORMAT(_to_goal, \"0%\") & \"' style='stop-color:\"&_Color_Upper_gradient&\";stop-opacity:1' />",
+              "  </linearGradient>",
+              "  ",
+              "  <!-- Rounded rectangle background -->",
+              "  <rect x='0' y='7.5' width='260' height='15' rx='7' ry='7' fill='#cccccc' />",
+              "",
+              "  <!-- Data -->",
+              "  <rect x='0' y='7.5' width='\" & FORMAT(_Adjusted_Width, \"0\") & \"' height='15' rx='7' ry='7' fill='url(#grad1)' />",
+              "",
+              "  <!-- Vertical dashed line, at 80% -->",
+              "  <line x1='\" & 260*0.8 &\"' y1='2.5' x2='\" & 260*0.8 &\"' y2='27.5' stroke='black' stroke-dasharray='5,5' />",
+              "",
+              "</svg>\"",
+              "",
+              "",
+              "RETURN",
+              "    _Result",
+              ""
+            ],
+            "lineageTag": "9785a71b-009c-4800-8549-1aa3fa3c6990"
+          },
+          {
+            "name": "KPI, Avg MTD Sales towards Target",
+            "displayFolder": "-KPI- Avg MTD Sales",
+            "expression": [
+              "",
+              "VAR _value = DIVIDE( [Employees Avg MTD Sales], [Employees AVG MTD Sales Target] )",
+              "VAR _indicator = IF( _value >= 0.8 , \"✔ \", \"✘ \")",
+              "VAR _Result =",
+              "REPT(\"‏‏‎ ‎\", 25) & _indicator & FORMAT( _value , \"0.0%\")",
+              "",
+              "RETURN  _Result"
+            ],
+            "lineageTag": "200165e3-722c-4898-8a17-e88edead6068"
+          },
+          {
+            "name": "Employees Avg MTD Sales vs Previous Month",
+            "displayFolder": "-KPI- Avg MTD Sales",
+            "expression": [
+              "",
+              "VAR _Value = ",
+              "DIVIDE( ",
+              "    [Employees Avg MTD Sales] - [Employees Avg MTD Sales PM],",
+              "    [Employees Avg MTD Sales PM]",
+              ")",
+              "VAR _Indicator = ",
+              "IF( _Value > 0 , \"▲\", \"▼\" )",
+              "",
+              "RETURN ",
+              "REPT(\"‏‏‎ ‎\", 26) & ",
+              "_Indicator &",
+              "FORMAT( _Value, \"0.0%\") "
+            ],
+            "lineageTag": "f41c8c68-24ed-4cc8-a738-dd0226759e6f"
+          },
+          {
+            "name": "KPI, Avg MTD Sales towards Target CF",
+            "displayFolder": "-KPI- Avg MTD Sales",
+            "expression": [
+              "",
+              "VAR _value = DIVIDE( [Employees Avg MTD Sales], [Employees AVG MTD Sales Target]  )",
+              "RETURN IF( _value >= 0.8 , \"green\", \"red\")",
+              ""
+            ],
+            "lineageTag": "ed11c7c4-54b2-406f-acf4-481db7c6c32f"
+          },
+          {
+            "name": "Employees Avg MTD Sales vs Previous Month CF",
+            "displayFolder": "-KPI- Avg MTD Sales",
+            "expression": [
+              "",
+              "IF( ",
+              "    [Employees Avg MTD Sales] > [Employees Avg MTD Sales PM],",
+              "    \"green\", \"red\" ",
+              ")"
+            ],
+            "lineageTag": "6b9d28c2-bfca-4508-a1f3-260c0e6dc2b0"
+          },
+          {
+            "name": "Employees Avg MTD % change PM",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "displayFolder": "-KPI-Avg MTD % Change",
+            "expression": [
+              "",
+              "IF (",
+              "    [_ShowValueForDates],",
+              "    CALCULATE (",
+              "        [Employees Avg MTD % Change],",
+              "        CALCULATETABLE (",
+              "            DATEADD ( 'Date'[Date], -1, MONTH ),",
+              "            'Date'[DateWithTransactions] = TRUE",
+              "        )",
+              "    )",
+              ")"
+            ],
+            "lineageTag": "55afb984-5afb-49ca-9966-0f62a7645781"
+          },
+          {
+            "name": "Employees Avg MTD % Change vs Previous Month",
+            "displayFolder": "-KPI-Avg MTD % Change",
+            "expression": [
+              "",
+              "VAR _Value = ",
+              "DIVIDE( ",
+              "    [Employees Avg MTD % Change] - [Employees Avg MTD % change PM],",
+              "    [Employees Avg MTD % change PM]",
+              ")",
+              "VAR _Indicator = ",
+              "IF( _Value > 0 , \"▲\", \"▼\" )",
+              "",
+              "RETURN ",
+              "REPT(\"‏‏‎ ‎\", 32) & ",
+              "_Indicator &",
+              "FORMAT( _Value, \"0.0%\") "
+            ],
+            "lineageTag": "a2b731ec-450c-4dee-9bd4-fc84e97256df"
+          },
+          {
+            "name": "Employees Avg MTD % change Target",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "displayFolder": "-KPI-Avg MTD % Change",
+            "expression": "0.45",
+            "lineageTag": "1c109882-9439-42b1-915d-976b75f8e42a"
+          },
+          {
+            "name": "KPI, Employees Avg MTD % Change towards Target",
+            "displayFolder": "-KPI-Avg MTD % Change",
+            "expression": [
+              "",
+              "VAR _value = DIVIDE( [Employees Avg MTD % Change], [Employees Avg MTD % change Target] )",
+              "VAR _indicator = IF( _value >= 0.8 , \"✔ \", \"✘ \")",
+              "VAR _Result =",
+              "REPT(\"‏‏‎ ‎\", 26) & _indicator & FORMAT( _value , \"0.0%\")",
+              "",
+              "RETURN  _Result"
+            ],
+            "lineageTag": "a2034462-9822-4f16-a1b0-4b3d3b7d9231"
+          },
+          {
+            "name": "SVG 100% Stacked Bar Chart Employees Avg MTD % change",
+            "dataCategory": "ImageUrl",
+            "displayFolder": "-KPI-Avg MTD % Change",
+            "expression": [
+              "",
+              "",
+              "VAR _goal = [Employees Avg MTD % change Target]",
+              "VAR _to_goal = DIVIDE( [Employees Avg MTD % Change], _goal ) ",
+              "VAR _Adjusted_Width = _to_goal * 260",
+              "",
+              "VAR _Color_Lower_gradient = IF( _to_goal >= 0.8, \"#C6E3FF\", \"#F7C7D0\" )",
+              "VAR _Color_Upper_gradient = IF( _to_goal >= 0.8, \"#118DFF\", \"#DC143C\" )",
+              "",
+              "",
+              "VAR _Result = ",
+              "\"data:image/svg+xml;utf8, <svg width='300' height='30' xmlns='http://www.w3.org/2000/svg'>",
+              "  <!-- Define colors for the segments -->",
+              "   <linearGradient id='grad1' x1='0%' y1='0%' x2='100%' y2='0%'>",
+              "    <stop offset='0%' style='stop-color:\"&_Color_Lower_gradient&\";stop-opacity:1' />",
+              "    <stop offset='\" & FORMAT(_to_goal, \"0%\") & \"' style='stop-color:\"&_Color_Upper_gradient&\";stop-opacity:1' />",
+              "  </linearGradient>",
+              "  ",
+              "  <!-- Rounded rectangle background -->",
+              "  <rect x='0' y='7.5' width='260' height='15' rx='7' ry='7' fill='#cccccc' />",
+              "",
+              "  <!-- Data -->",
+              "  <rect x='0' y='7.5' width='\" & FORMAT(_Adjusted_Width, \"0\") & \"' height='15' rx='7' ry='7' fill='url(#grad1)' />",
+              "",
+              "  <!-- Vertical dashed line, at 80% -->",
+              "  <line x1='\" & 260*0.8 &\"' y1='2.5' x2='\" & 260*0.8 &\"' y2='27.5' stroke='black' stroke-dasharray='5,5' />",
+              "",
+              "</svg>\"",
+              "",
+              "",
+              "RETURN",
+              "    _Result",
+              ""
+            ],
+            "lineageTag": "548ea32c-abe6-45f1-a9bf-5c26f2dd3435"
+          },
+          {
+            "name": "Employees Avg MTD % Change vs Previous Month CF",
+            "displayFolder": "-KPI-Avg MTD % Change",
+            "expression": [
+              "",
+              "IF( ",
+              "    [Employees Avg MTD % Change] > [Employees Avg MTD % change PM],",
+              "    \"green\",",
+              "    \"red\"",
+              ")"
+            ],
+            "lineageTag": "86fffc28-2c32-4aa0-b5a0-67f66c842af2"
+          },
+          {
+            "name": "KPI, Employees Avg MTD % Change towards Target CF",
+            "displayFolder": "-KPI-Avg MTD % Change",
+            "expression": [
+              "",
+              "VAR _value = DIVIDE( [Employees Avg MTD % Change], [Employees Avg MTD % change Target] )",
+              "VAR _Result = IF( _value >= 0.8 , \"green \", \"red\")",
+              "RETURN  _Result"
+            ],
+            "lineageTag": "1fc47ff0-eafc-4d04-a8d5-25d1668f1a7b"
+          },
+          {
+            "name": "Number of Employees selling more than 100K PM",
+            "displayFolder": "-KPI-Number of Employees Sold more than 100K",
+            "expression": [
+              "",
+              "IF (",
+              "    [_ShowValueForDates],",
+              "    CALCULATE (",
+              "        [Number of Employees selling more than 100K MTD],",
+              "        CALCULATETABLE (",
+              "            DATEADD ( 'Date'[Date], -1, MONTH ),",
+              "            'Date'[DateWithTransactions] = TRUE",
+              "        )",
+              "    )",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "85a14966-8bb5-42c4-b239-22c14850d235"
+          },
+          {
+            "name": "Number of Employees selling more than 100K Target",
+            "displayFolder": "-KPI-Number of Employees Sold more than 100K",
+            "expression": "20 ",
+            "formatString": "0",
+            "lineageTag": "653dcdfa-b5b5-416c-8ccf-befcd1794de9"
+          },
+          {
+            "name": "SVG 100% Stacked Bar Chart Number of Employees Selling more than 100K",
+            "displayFolder": "-KPI-Number of Employees Sold more than 100K",
+            "expression": [
+              "",
+              "",
+              "VAR _to_goal = ",
+              "DIVIDE( ",
+              "    [Number of Employees selling more than 100K MTD],",
+              "    [Number of Employees selling more than 100K Target] ) ",
+              "",
+              "VAR _Adjusted_Width = _to_goal * 260",
+              "",
+              "VAR _Color_Lower_gradient = IF( _to_goal >= 0.8, \"#C6E3FF\", \"#F7C7D0\" )",
+              "VAR _Color_Upper_gradient = IF( _to_goal >= 0.8, \"#118DFF\", \"#DC143C\" )",
+              "",
+              "",
+              "VAR _Result = ",
+              "\"data:image/svg+xml;utf8, <svg width='300' height='30' xmlns='http://www.w3.org/2000/svg'>",
+              "    <linearGradient id='grad1' x1='0%' y1='0%' x2='100%' y2='0%'>",
+              "    <stop offset='0%' style='stop-color:\"&_Color_Lower_gradient&\";stop-opacity:1' />",
+              "    <stop offset='\" & FORMAT(_to_goal, \"0%\") & \"' style='stop-color:\"&_Color_Upper_gradient&\";stop-opacity:1' />",
+              "  </linearGradient>",
+              "  ",
+              "  <!-- Rounded rectangle background -->",
+              "  <rect x='0' y='7.5' width='260' height='15' rx='7' ry='7' fill='#cccccc' />",
+              "",
+              "  <!-- Data -->",
+              "  <rect x='0' y='7.5' width='\" & FORMAT(_Adjusted_Width, \"0\") & \"' height='15' rx='7' ry='7' fill='url(#grad1)' />",
+              "",
+              "  <!-- Vertical dashed line, at 80% -->",
+              "  <line x1='\" & 260*0.8 &\"' y1='2.5' x2='\" & 260*0.8 &\"' y2='27.5' stroke='black' stroke-dasharray='5,5' />",
+              "",
+              "</svg>\"",
+              "",
+              "",
+              "RETURN",
+              "    _Result",
+              ""
+            ],
+            "lineageTag": "3473c419-217f-474d-9cdd-463b87bb533a"
+          },
+          {
+            "name": "KPI, Number of Employees sold above 100K towards Target",
+            "displayFolder": "-KPI-Number of Employees Sold more than 100K",
+            "expression": [
+              "",
+              "VAR _value = DIVIDE( [Number of Employees selling more than 100K MTD], [Number of Employees selling more than 100K Target] )",
+              "VAR _indicator = IF( _value >= 0.8 , \"✔ \", \"✘ \")",
+              "VAR _Result =",
+              "REPT(\"‏‏‎ ‎\", 28) & _indicator & FORMAT( _value , \"0.0%\")",
+              "",
+              "RETURN  _Result"
+            ],
+            "lineageTag": "8301a705-717a-42f8-9afe-e5fe85b5f924"
+          },
+          {
+            "name": "Number of Employees sold more than 100K vs Previous Month",
+            "displayFolder": "-KPI-Number of Employees Sold more than 100K",
+            "expression": [
+              "",
+              "VAR _Value = ",
+              "DIVIDE( ",
+              "    [Number of Employees selling more than 100K MTD] - [Number of Employees selling more than 100K PM],",
+              "    [Number of Employees selling more than 100K PM]",
+              ")",
+              "VAR _Indicator = ",
+              "IF( _Value > 0 , \"▲\", \"▼\" )",
+              "",
+              "RETURN ",
+              "REPT(\"‏‏‎ ‎\", 34) & ",
+              "_Indicator &",
+              "FORMAT( _Value, \"0.0%\") "
+            ],
+            "lineageTag": "c1d5d11b-6df8-44c9-8caa-5f7372caa48c"
+          },
+          {
+            "name": "Number of Employees sold more than 100K vs Previous Month CF",
+            "displayFolder": "-KPI-Number of Employees Sold more than 100K",
+            "expression": [
+              "",
+              "IF(",
+              "    [Number of Employees selling more than 100K MTD] > [Number of Employees selling more than 100K PM],",
+              "    \"green\", \"red\"",
+              ")",
+              ""
+            ],
+            "lineageTag": "d3f7047c-b93b-410d-8bc8-ab97adc66e19"
+          },
+          {
+            "name": "KPI, Number of Employees sold above 100K towards Target CF",
+            "displayFolder": "-KPI-Number of Employees Sold more than 100K",
+            "expression": [
+              "",
+              "VAR _value = DIVIDE( [Number of Employees selling more than 100K MTD], [Number of Employees selling more than 100K Target] )",
+              "VAR _Result = IF( _value >= 0.8 , \"green\", \"red\")",
+              "RETURN  _Result"
+            ],
+            "lineageTag": "76f15edb-0c92-4108-a260-0055b77641d1"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "# Measures",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"i44FAA==\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(Source,{{\"Column1\", type text}}),",
+                "    #\"Removed Columns\" = Table.RemoveColumns(#\"Changed Type\",{\"Column1\"})",
+                "in",
+                "    #\"Removed Columns\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "DateAutoTemplate",
+        "annotations": [
+          {
+            "name": "SQLBI_Template",
+            "value": "Dates"
+          },
+          {
+            "name": "SQLBI_TemplateTable",
+            "value": "DateAutoTemplate"
+          },
+          {
+            "name": "SQLBI_CalendarType",
+            "value": "Calendar"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SQLBI_AttributeTypes",
+                "value": "Date"
+              }
+            ],
+            "dataCategory": "PaddedDateTableDates",
+            "dataType": "dateTime",
+            "formatString": "m/d/yyyy",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isKey": true,
+            "isNameInferred": true,
+            "lineageTag": "568eb4cc-243b-4e1e-a9a1-b70610932ebf",
+            "sourceColumn": "[Date]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Year",
+            "dataCategory": "Years",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "81eec4f1-f08c-48b6-9bb2-bfe929338d60",
+            "sourceColumn": "[Year]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Year Quarter Number",
+            "dataCategory": "Quarters",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "cee50b5a-bb59-4561-b976-9adc16c11828",
+            "sourceColumn": "[Year Quarter Number]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Year Quarter",
+            "dataCategory": "Quarters",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "2c5fa7fa-8a53-4c67-a745-5dd265d40a78",
+            "sortByColumn": "Year Quarter Number",
+            "sourceColumn": "[Year Quarter]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Quarter",
+            "dataCategory": "QuarterOfYear",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "ee06f420-28ac-45cf-8aee-bfb2eab0c62b",
+            "sourceColumn": "[Quarter]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Year Month",
+            "dataCategory": "Months",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "3b0b4966-55f5-4fe4-84ab-a57b7d7b4e7c",
+            "sortByColumn": "Year Month Number",
+            "sourceColumn": "[Year Month]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Year Month Number",
+            "dataCategory": "Months",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "7d5b4c81-b682-4dad-9aba-0cc5776de150",
+            "sourceColumn": "[Year Month Number]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Month",
+            "dataCategory": "MonthOfYear",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "c1ed4b2a-457a-4dec-ab15-bfdb5fbdb7b6",
+            "sortByColumn": "Month Number",
+            "sourceColumn": "[Month]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Month Number",
+            "dataCategory": "MonthOfYear",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "415e502a-8764-45b8-9650-d62523fc45be",
+            "sourceColumn": "[Month Number]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Day of Week Number",
+            "annotations": [
+              {
+                "name": "SQLBI_AttributeTypes",
+                "value": "DayOfWeek"
+              },
+              {
+                "name": "SQLBI_FilterSafe",
+                "value": "True"
+              }
+            ],
+            "dataCategory": "DayOfWeek",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "d5e45940-bf04-4c20-998d-80491482db08",
+            "sourceColumn": "[Day of Week Number]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Day of Week",
+            "annotations": [
+              {
+                "name": "SQLBI_FilterSafe",
+                "value": "True"
+              }
+            ],
+            "dataCategory": "DayOfWeek",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "c7162a13-ca06-4290-aaac-ec0aa58540a0",
+            "sortByColumn": "Day of Week Number",
+            "sourceColumn": "[Day of Week]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "DateWithTransactions",
+            "annotations": [
+              {
+                "name": "SQLBI_AttributeTypes",
+                "value": "DateDuration"
+              }
+            ],
+            "dataType": "boolean",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "3ef46dfe-d5ef-48c9-af7a-0805bfa643df",
+            "sourceColumn": "[DateWithTransactions]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "dataCategory": "Time",
+        "hierarchies": [
+          {
+            "name": "Calendar",
+            "isHidden": true,
+            "levels": [
+              {
+                "name": "Year",
+                "column": "Year",
+                "lineageTag": "fbd41ded-dab0-49f0-9d58-d65c4df5a2af",
+                "ordinal": 0
+              },
+              {
+                "name": "Month",
+                "column": "Year Month",
+                "lineageTag": "cd37eeeb-ee81-42fe-8cd6-e2d06f63e043",
+                "ordinal": 1
+              },
+              {
+                "name": "Date",
+                "column": "Date",
+                "lineageTag": "993b5f18-d1a2-4c83-9d39-b5e1405c34d5",
+                "ordinal": 2
+              }
+            ],
+            "lineageTag": "a20a4e73-b56e-48b0-8a3b-e2d954635334"
+          }
+        ],
+        "isHidden": true,
+        "lineageTag": "79a8fb90-ab27-4791-973f-980b1cbd44d5",
+        "partitions": [
+          {
+            "name": "DateAutoTemplate",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "",
+                "--  ",
+                "--     Configuration",
+                "--  ",
+                "VAR __FirstDayOfWeek = 0",
+                "----------------------------------------",
+                "VAR __WeekDayCalculationType = IF ( __FirstDayOfWeek = 0, 7, __FirstDayOfWeek ) + 10",
+                "VAR __Calendar = ",
+                "    VAR __FirstYear = YEAR ( MINX ( { MIN ( 'FactSales'[DateKey] ) }, ''[Value] ) )",
+                "    VAR __LastYear =  YEAR ( MAXX ( { MAX ( 'FactSales'[DateKey] ) }, ''[Value] ) )",
+                "    RETURN CALENDAR (",
+                "        DATE ( __FirstYear, 1, 1 ),",
+                "        DATE ( __LastYear, 12, 31 )",
+                "    )",
+                "VAR __Step3 = ",
+                "    GENERATE (",
+                "        __Calendar,",
+                "        VAR __IsStandardLocale = IF ( FORMAT( DATE( 2000, 1, 1 ), \"oooo\" ) = \"oooo\", TRUE, FALSE )",
+                "        VAR __MonthFormatString = IF( __IsStandardLocale, \"mmm\", \"ooo\" )",
+                "        VAR __DayFormatString = IF( __IsStandardLocale, \"ddd\", \"aaa\" )",
+                "        VAR __LastTransactionDate = MAXX ( { MAX ( 'FactSales'[DateKey] ) }, ''[Value] )",
+                "        VAR __Date = [Date]",
+                "        VAR __YearNumber = YEAR ( __Date )",
+                "        VAR __QuarterNumber = QUARTER ( __Date )",
+                "        VAR __YearQuarterNumber = CONVERT ( __YearNumber * 4 + __QuarterNumber - 1, INTEGER )",
+                "        VAR __MonthNumber = MONTH ( __Date )",
+                "        VAR __WeekDayNumber = WEEKDAY ( __Date, __WeekDayCalculationType )",
+                "        VAR __WeekDay = FORMAT ( __Date, __DayFormatString )",
+                "        RETURN ROW ( ",
+                "            \"Year\", __YearNumber,",
+                "            \"Year Quarter Number\", __YearQuarterNumber,",
+                "            \"Year Quarter\", FORMAT ( __QuarterNumber, \"\\Q0\" ) & \"-\" & FORMAT ( __YearNumber, \"0000\" ),",
+                "            \"Quarter\", FORMAT( __QuarterNumber, \"\\Q0\" ),",
+                "            \"Year Month\", FORMAT ( __Date, __MonthFormatString & \" yyyy\" ),",
+                "            \"Year Month Number\", __YearNumber * 12 + __MonthNumber - 1,",
+                "            \"Month\", FORMAT ( __Date, __MonthFormatString ),",
+                "            \"Month Number\", __MonthNumber,",
+                "            \"Day of Week Number\", __WeekDayNumber,",
+                "            \"Day of Week\", __WeekDay,",
+                "            \"DateWithTransactions\", __Date <= __LastTransactionDate ",
+                "        )",
+                "    )",
+                "RETURN",
+                "    __Step3"
+              ],
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Date",
+        "annotations": [
+          {
+            "name": "SQLBI_Template",
+            "value": "Dates"
+          },
+          {
+            "name": "SQLBI_TemplateTable",
+            "value": "Date"
+          },
+          {
+            "name": "SQLBI_CalendarType",
+            "value": "Calendar"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SQLBI_AttributeTypes",
+                "value": "Date"
+              }
+            ],
+            "dataCategory": "PaddedDateTableDates",
+            "dataType": "dateTime",
+            "formatString": "m/d/yyyy",
+            "isDataTypeInferred": true,
+            "isKey": true,
+            "isNameInferred": true,
+            "lineageTag": "d43bb31e-18bd-48ff-906e-4d4e7752f4f5",
+            "sourceColumn": "DateAutoTemplate[Date]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Year",
+            "dataCategory": "Years",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "9423eee5-451b-49a9-a580-9abb87847951",
+            "sourceColumn": "DateAutoTemplate[Year]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Year Quarter Number",
+            "dataCategory": "Quarters",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "a43474c8-b36c-4b2f-8379-e5d37d42ed65",
+            "sourceColumn": "DateAutoTemplate[Year Quarter Number]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Year Quarter",
+            "dataCategory": "Quarters",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "858c5ce2-c018-48db-ba30-37edecd82dc7",
+            "sortByColumn": "Year Quarter Number",
+            "sourceColumn": "DateAutoTemplate[Year Quarter]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Quarter",
+            "dataCategory": "QuarterOfYear",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "3fe9e447-be32-4b2e-ad22-535c5cb9fdba",
+            "sourceColumn": "DateAutoTemplate[Quarter]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Year Month",
+            "dataCategory": "Months",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "dc655f75-9b8c-4501-a7cf-7c82dda45c2d",
+            "sortByColumn": "Year Month Number",
+            "sourceColumn": "DateAutoTemplate[Year Month]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Year Month Number",
+            "dataCategory": "Months",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "c94253a4-8937-4e1b-bb43-0de182c067a7",
+            "sourceColumn": "DateAutoTemplate[Year Month Number]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Month",
+            "dataCategory": "MonthOfYear",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "9c9c933e-12a1-4eac-b72c-a2dd270ed0ee",
+            "sortByColumn": "Month Number",
+            "sourceColumn": "DateAutoTemplate[Month]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Month Number",
+            "dataCategory": "MonthOfYear",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "3161bd1f-5e58-4844-92b9-6ba57f4d4677",
+            "sourceColumn": "DateAutoTemplate[Month Number]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Day of Week Number",
+            "annotations": [
+              {
+                "name": "SQLBI_AttributeTypes",
+                "value": "DayOfWeek"
+              },
+              {
+                "name": "SQLBI_FilterSafe",
+                "value": "True"
+              }
+            ],
+            "dataCategory": "DayOfWeek",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "bd242311-8b0a-4a29-bfe7-6c43359bee7c",
+            "sourceColumn": "DateAutoTemplate[Day of Week Number]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Day of Week",
+            "annotations": [
+              {
+                "name": "SQLBI_FilterSafe",
+                "value": "True"
+              }
+            ],
+            "dataCategory": "DayOfWeek",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "0eae60ff-f059-4aee-9227-902ea550e77f",
+            "sortByColumn": "Day of Week Number",
+            "sourceColumn": "DateAutoTemplate[Day of Week]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "DateWithTransactions",
+            "annotations": [
+              {
+                "name": "SQLBI_AttributeTypes",
+                "value": "DateDuration"
+              }
+            ],
+            "dataType": "boolean",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "9d8d5117-b9c0-4ea9-9981-a557e3b945c0",
+            "sourceColumn": "DateAutoTemplate[DateWithTransactions]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "dataCategory": "Time",
+        "hierarchies": [
+          {
+            "name": "Calendar",
+            "levels": [
+              {
+                "name": "Year",
+                "column": "Year",
+                "lineageTag": "826d1722-51b7-4e21-a1ed-c0c04573180e",
+                "ordinal": 0
+              },
+              {
+                "name": "Month",
+                "column": "Year Month",
+                "lineageTag": "0b603329-c7bc-40b7-b3e7-40cc702c7b91",
+                "ordinal": 1
+              },
+              {
+                "name": "Date",
+                "column": "Date",
+                "lineageTag": "f4ace67e-fbce-4242-92db-56badec94154",
+                "ordinal": 2
+              }
+            ],
+            "lineageTag": "673c8eee-a795-4f83-8ed2-ed562b7f54a5"
+          }
+        ],
+        "lineageTag": "0dad4919-a8de-4c15-bc4c-64774172a6f8",
+        "measures": [
+          {
+            "name": "_ShowValueForDates",
+            "annotations": [
+              {
+                "name": "SQLBI_Template",
+                "value": "TimeIntelligence"
+              },
+              {
+                "name": "SQLBI_TimeIntelligence",
+                "value": "Standard"
+              },
+              {
+                "name": "SQLBI_CalendarType",
+                "value": "Calendar"
+              }
+            ],
+            "displayFolder": "Hidden Time Intelligence",
+            "expression": [
+              "",
+              "VAR __LastDateWithData =",
+              "    CALCULATE (",
+              "        MAXX ( { MAX ( 'FactSales'[DateKey] ) }, ''[Value] ),",
+              "        REMOVEFILTERS ()",
+              "    )",
+              "VAR __FirstDateVisible =",
+              "    MIN ( 'Date'[Date] )",
+              "VAR __Result =",
+              "    __FirstDateVisible <= __LastDateWithData",
+              "RETURN",
+              "    __Result"
+            ],
+            "isHidden": true,
+            "lineageTag": "b1349c10-c18d-40a4-a1a8-111b61d4c17a"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Date",
+            "mode": "import",
+            "source": {
+              "expression": "DateAutoTemplate",
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimEmployee",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "EmployeeKey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "ca5bb8b2-4fc7-4916-ab35-49ab62b741aa",
+            "sourceColumn": "EmployeeKey",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ParentEmployeeKey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "ffd5a3b6-5659-4e1a-951e-5883dedc7e59",
+            "sourceColumn": "ParentEmployeeKey",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "FirstName",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "b7ebd705-80b0-46f8-ad70-137ab268cf35",
+            "sourceColumn": "FirstName",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "LastName",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "ab22a8e3-cf8c-4c38-b226-50d24c49ac78",
+            "sourceColumn": "LastName",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Title",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "9a3ee046-f687-471b-950a-686045c20ec5",
+            "sourceColumn": "Title",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "HireDate",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "ee99a4d3-6a9d-4a60-bc03-36caa2e37623",
+            "sourceColumn": "HireDate",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "BirthDate",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "2d22622f-db95-442c-ba92-809aa44086f0",
+            "sourceColumn": "BirthDate",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Gender",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "24e8e047-b9e0-4a75-a907-c4d2b247451e",
+            "sourceColumn": "Gender",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "PayFrequency",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "7a9eab3d-e29e-40c3-a582-633297db3b30",
+            "sourceColumn": "PayFrequency",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "BaseRate",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "92c6128b-55d2-4e5b-83e8-8414e7c79d53",
+            "sourceColumn": "BaseRate",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DepartmentName",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "4901de0d-178d-43d2-b9d5-26ff73bd02cb",
+            "sourceColumn": "DepartmentName",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsSalesPerson",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "5563164e-ad08-4436-811f-e046739e03e8",
+            "sourceColumn": "IsSalesPerson",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "4244bae6-e54a-4523-9465-c65563a30dc1",
+        "partitions": [
+          {
+            "name": "DimEmployee",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"F:\\Work\\# My-Freelance-World\\Dataset\\Cleaned Contoso Dataset\\DimEmployee.csv\"),[Delimiter=\",\", Columns=21, Encoding=65001, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"EmployeeKey\", Int64.Type}, {\"ParentEmployeeKey\", Int64.Type}, {\"FirstName\", type text}, {\"LastName\", type text}, {\"Title\", type text}, {\"HireDate\", type date}, {\"BirthDate\", type date}, {\"EmailAddress\", type text}, {\"Phone\", type text}, {\"EmergencyContactName\", type text}, {\"EmergencyContactPhone\", type text}, {\"Gender\", type text}, {\"PayFrequency\", Int64.Type}, {\"BaseRate\", type number}, {\"VacationHours\", Int64.Type}, {\"DepartmentName\", type text}, {\"StartDate\", type date}, {\"Status\", type text}, {\"SalaryStatus\", type text}, {\"IsSalesPerson\", type text}, {\"IsMarried\", type text}}),",
+                "    #\"Removed Columns\" = Table.RemoveColumns(#\"Changed Type\",{\"EmailAddress\", \"Phone\", \"EmergencyContactName\", \"EmergencyContactPhone\", \"VacationHours\", \"StartDate\", \"Status\", \"SalaryStatus\", \"IsMarried\"})",
+                "in",
+                "    #\"Removed Columns\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimStore",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "StoreKey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "db9bd9ae-ca93-4d72-8853-7b4f288022ad",
+            "sourceColumn": "StoreKey",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "GeographyKey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "67f959fa-f43e-4a9b-919a-5e9edfc39bd2",
+            "sourceColumn": "GeographyKey",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "StoreType",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "aa6a3ebf-dc8f-439a-89e3-81b6ae46fcf9",
+            "sourceColumn": "StoreType",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "StoreName",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "769236f7-5f10-4f59-a33c-78af4c9c8ff4",
+            "sourceColumn": "StoreName",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Status",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "89b0023a-31c1-40df-9025-7096c361e394",
+            "sourceColumn": "Status",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "OpenDate",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "988068d7-8fd9-4eca-914a-06cee3bd1c18",
+            "sourceColumn": "OpenDate",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CloseDate",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "1690fd53-12c5-4034-991e-d3df3d0379e6",
+            "sourceColumn": "CloseDate",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CloseReason",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "4234fd86-d180-4091-8ec5-e79b30756cee",
+            "sourceColumn": "CloseReason",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "EmployeeCount",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "f49b0d8d-c8a3-492c-bb05-8145542cfe28",
+            "sourceColumn": "EmployeeCount",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "SellingAreaSize",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "cbe717a3-2034-4995-a9ba-b24621124486",
+            "sourceColumn": "SellingAreaSize",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "EmployeeKey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "6745b5b8-21e0-461d-9988-e7544a0e6258",
+            "sourceColumn": "EmployeeKey",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "ffb9d38f-229c-4d51-a062-a4530c62274d",
+        "partitions": [
+          {
+            "name": "DimStore",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"F:\\Work\\# My-Freelance-World\\Dataset\\Cleaned Contoso Dataset\\DimStore.csv\"),[Delimiter=\",\", Columns=16, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"StoreKey\", Int64.Type}, {\"GeographyKey\", Int64.Type}, {\"StoreManager\", Int64.Type}, {\"StoreType\", type text}, {\"StoreName\", type text}, {\"Status\", type text}, {\"OpenDate\", type date}, {\"CloseDate\", type date}, {\"EntityKey\", Int64.Type}, {\"StorePhone\", type text}, {\"StoreFax\", type text}, {\"CloseReason\", type text}, {\"EmployeeCount\", Int64.Type}, {\"SellingAreaSize\", Int64.Type}, {\"LastRemodelDate\", type datetime}, {\"EmployeeKey\", Int64.Type}}),",
+                "    #\"Removed Columns\" = Table.RemoveColumns(#\"Changed Type\",{\"LastRemodelDate\", \"EntityKey\", \"StorePhone\", \"StoreFax\", \"StoreManager\"})",
+                "in",
+                "    #\"Removed Columns\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Top-Bottom-N",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "b9cef0d59c514540bee941c0ebbfa7bc"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Top-Bottom-N",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "extendedProperties": [
+              {
+                "name": "ParameterMetadata",
+                "type": "json",
+                "value": {
+                  "version": 0
+                }
+              }
+            ],
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isNameInferred": false,
+            "lineageTag": "0e191170-14f3-4c44-9c0e-cfc1fb4d7341",
+            "sourceColumn": "[Value]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "3997ae50-9071-4b46-9d07-26a67a48b118",
+        "measures": [
+          {
+            "name": "Top-Bottom-N Value",
+            "expression": "SELECTEDVALUE('Top-Bottom-N'[Top-Bottom-N], 10)",
+            "formatString": "0",
+            "lineageTag": "f0821946-81fa-4de7-851c-bc52cfdf32a8"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Top-Bottom-N",
+            "mode": "import",
+            "source": {
+              "expression": "GENERATESERIES(1, 30, 1)",
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Clustered Employees",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Clustered Employees",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "58f05d60-5af8-4128-98a6-d32a25437c3e",
+            "sourceColumn": "Clustered Employees",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Order",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "07613249-45b3-4f35-a4a0-315a43a70882",
+            "sourceColumn": "Order",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "0deb126c-666e-4992-a0dc-22cc2aa6f607",
+        "partitions": [
+          {
+            "name": "Clustered Employees",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"i45WCskv8FPSUTJUitWJVvIvyUgtKgZyjcBcp/ySkvxckLSxUmwsAA==\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#\"Clustered Employees\" = _t, Order = _t]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(Source,{{\"Clustered Employees\", type text}, {\"Order\", Int64.Type}})",
+                "in",
+                "    #\"Changed Type\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Actuals-vs-PctChange",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "df6a09b9bf3841969508612b3443c5b5"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Top-Bottom-Field",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "c9eacc0f-845a-4683-8632-d70ffb119a80",
+            "sourceColumn": "[Top-Bottom-Field]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Order",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "300fee3c-9edf-4bbb-8f2d-fc3fef782719",
+            "sourceColumn": "[Order]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "a63e45b9-b081-4a65-a158-16f5d7d33460",
+        "partitions": [
+          {
+            "name": "Actuals-vs-PctChange",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "",
+                "DATATABLE( ",
+                "    \"Top-Bottom-Field\", STRING, \"Order\", INTEGER,",
+                "    {",
+                "        {\"MOM% Sales\", 1}, ",
+                "        {\"MTD Sales\", 2}",
+                "    }",
+                ")"
+              ],
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimChannel",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "ChannelKey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "665aac16-603c-44a8-9298-0ae6e64a2e3e",
+            "sourceColumn": "ChannelKey",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ChannelName",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "3f6f77ba-fb07-4122-b5f1-34bc75855017",
+            "sourceColumn": "ChannelName",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "08f81c88-9577-40ec-84a3-2fb4ea04f4ff",
+        "partitions": [
+          {
+            "name": "DimChannel",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"F:\\Work\\# My-Freelance-World\\Dataset\\Cleaned Contoso Dataset\\DimChannel.csv\"),[Delimiter=\",\", Columns=3, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"ChannelKey\", Int64.Type}, {\"ChannelName\", type text}, {\"ChannelDescription\", type text}}),",
+                "    #\"Removed Columns\" = Table.RemoveColumns(#\"Changed Type\",{\"ChannelDescription\"})",
+                "in",
+                "    #\"Removed Columns\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
