@@ -63,7 +63,7 @@ function Update-History {
 }
 
 while ($true) {
-  $statusRaw = git status --porcelain
+  $statusRaw = git status --porcelain -- . ":!status.json" ":!history.json" ":!change-summary.txt"
   $statusLines = @()
   if ($statusRaw) {
     $statusLines = $statusRaw -split "`n" | Where-Object { $_ -ne '' }
@@ -74,7 +74,7 @@ while ($true) {
     $lastChangeTime = Get-Date
   }
 
-  $diffStatWork = git diff --stat
+  $diffStatWork = git diff --stat -- . ":!status.json" ":!history.json" ":!change-summary.txt"
   $changeSig = ($statusLines -join "`n") + "`n" + $diffStatWork
 
   Write-StatusFile -StatusLines $statusLines -DiffStat $diffStatWork -LastCommit $lastCommitTime -LastChange $lastChangeTime -Pending $pending

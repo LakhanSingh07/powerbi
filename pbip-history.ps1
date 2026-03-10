@@ -30,6 +30,17 @@ function Finalize-Commit {
     }
   }
 
+  if ($c.files.Count -eq 0 -and $c.statusByPath.Count -gt 0) {
+    foreach ($k in $c.statusByPath.Keys) {
+      $c.files += [ordered]@{
+        path = $k
+        insertions = $null
+        deletions = $null
+        status = $c.statusByPath[$k]
+      }
+    }
+  }
+
   $c.filesChanged = ($c.files | Select-Object -ExpandProperty path -Unique).Count
   $c.stats = [ordered]@{
     files = $c.filesChanged
