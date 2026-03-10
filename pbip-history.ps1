@@ -7,7 +7,11 @@ $ErrorActionPreference = 'Stop'
 $raw = git log --date=iso-strict --pretty=format:"commit:%H|%h|%an|%ad|%s" --numstat --name-status -n $Limit
 $lines = @()
 if ($raw) {
-  $lines = $raw -split "`n"
+  if ($raw -is [System.Array]) {
+    $lines = $raw
+  } else {
+    $lines = $raw -split "`n"
+  }
 }
 
 $commits = @()
@@ -34,10 +38,11 @@ function Finalize-Commit {
   }
 
   $c.Remove('statusByPath')
-  $commits += $c
+  $script:commits += $c
 }
 
 foreach ($line in $lines) {
+  if (-not $line) { continue }
   if ($line -like 'commit:*') {
     Finalize-Commit -c $curr
 
